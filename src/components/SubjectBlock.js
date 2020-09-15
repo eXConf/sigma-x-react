@@ -1,34 +1,53 @@
 import React from 'react'
 import Subject from './Subject'
 import Question from './Question'
+import Price from './Price'
+import PlayerScore from './PlayerScore'
 
 class SubjectBlock extends React.Component {
 
   render() {
     return (
-      // <div>
-      //   <table>
-      //     <th>SubjectName</th>
-      //     <tr>
-      //       <td>Price</td>
-      //       <td>10</td>
-      //       <td>10</td>
-      //       <td>10</td>
-      //       <td>10</td>
-      //     </tr>
-      //   </table>
-      // </div>
-      
-      
-      
-      <div>
+      <React.Fragment>
         <Subject />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-      </div>
+        <tr>
+          <Price />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+        </tr>
+
+        <tr>
+          <Price />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+        </tr>
+        <tr>
+          <Price />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+        </tr>
+        <tr>
+          <Price />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+        </tr>
+        <tr>
+          <Price />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+          <PlayerScore />
+        </tr>
+      </React.Fragment>
+      
     )
   }
 }

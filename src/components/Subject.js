@@ -4,9 +4,11 @@ class Subject extends React.Component {
 
   render() {
     return (
-      <div className="subject">
-        Subject
-      </div>
+      <React.Fragment>
+        <tr>
+          <td colSpan="5" className="subject">SubjectName</td>
+        </tr>
+      </React.Fragment>
     )
   }
 }

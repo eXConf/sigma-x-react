@@ -13,10 +13,20 @@ const App = () => {
         <Menu />
       </div>
       <div className="main-container">
-        <SubjectBlock />
-        <SummaryBlock />
-        <ControlsBlock />
-        <NavigationBlock />
+        <table className="scores-block">
+          <tbody>
+            <SubjectBlock />
+            <SubjectBlock />
+            <SummaryBlock />
+            <ControlsBlock />
+            <NavigationBlock />
+          </tbody>
+        </table>
+
+
+        
+        
+        
         <PackageBlock />
       </div>
     </div>

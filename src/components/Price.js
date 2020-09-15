@@ -4,9 +4,9 @@ class Price extends React.Component {
 
   render() {
     return (
-      <div className="price">
+      <td className="price">
         10
-      </div>
+      </td>
     )
   }
 }

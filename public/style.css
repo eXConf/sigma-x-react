@@ -5,6 +5,11 @@
 :root {
   --price-width: 50px;
   --player-score-wdith: 140px;
+
+  --theme-green-main: rgb(96, 170, 96);
+  --theme-green-dark: rgb(75, 133, 75);
+  --theme-green-light: rgba(96, 170, 96, 0.5);
+  --theme-green-lighter: rgba(96, 170, 96, 0.25);
 }
 
 .container {
@@ -14,7 +19,7 @@
 }
 
 .menu-container {
-  background-color: rgb(96, 170, 96);
+  background-color: var(--theme-green-main);
   color: white;
 
   display: flex;
@@ -29,7 +34,7 @@
   width: 55px;
   height: 55px;
   margin-bottom: 10px;
-  background-color: rgb(75, 133, 75);
+  background-color: var(--theme-green-dark);
   color: white;
   border: none;
 }
@@ -37,34 +42,99 @@
 .main-container {
   background-color: white;
   width: 100%;
+  padding: 10px;
+}
+
+.scores-block {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.subject-block {
+  
 }
 
 .subject {
-  background-color: rgb(204, 204, 204);
-  font-size: x-large;
-  text-align: center;
-}
+  background-color: var(--theme-green-light);
+  font-size: larger;
+  font-weight: bold;
+  padding: 5px;
 
-.question {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  /* justify-content: space-between; */
-  height: 26px;
-  margin-left: 10px;
-  margin-right: 20px;
 }
 
 .price {
-  width: var(--price-width);
-  font-size: large;
   font-weight: bold;
+  width: 40px;
+
 }
 
 .player-score {
-  width: var(--player-score-wdith);
-  text-align: center;
-  border-bottom: solid 1px rgb(168, 168, 168);
 
+}
+
+.divider {
+  border-top: solid 2px var(--theme-green-light);
+}
+
+.sigma {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.player-sum {
+  font-weight: bold;
+}
+
+.controls-block {
+  width: 100%;
+  height: 70px;
+  background-color: var(--theme-green-lighter);
+  text-align: center;
+}
+
+.player-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-name {
+  width: 80px
+}
+
+.player-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-size: x-large;
+  border: none;
+  margin: 5px;
+}
+
+.player-button.plus {
+  color: var(--theme-green-main);
+  /* background-color: var(--theme-green-lighter); */
+}
+
+.player-button.minus {
+  color: var(--theme-green-main);
+}
+
+.navigation-block {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.nav-prev, .nav-next, .nav-current {
+  width: 70px;
+  height: 40px;
+  border: none;
+  background-color: var(--theme-green-main);
+  font-size: x-large;
+  font-weight: bold;
+  color: rgb(241, 241, 241);
 }
