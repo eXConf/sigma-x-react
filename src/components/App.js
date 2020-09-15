@@ -13,21 +13,24 @@ const App = () => {
         <Menu />
       </div>
       <div className="main-container">
+        <div className="scrollable">
+          <table className="scores-block">
+            <tbody>
+              <SubjectBlock />
+              <SubjectBlock />
+              <SubjectBlock />
+              <SubjectBlock />
+            </tbody>
+          </table>
+        </div>
         <table className="scores-block">
           <tbody>
-            <SubjectBlock />
-            <SubjectBlock />
             <SummaryBlock />
             <ControlsBlock />
             <NavigationBlock />
+            <PackageBlock />
           </tbody>
         </table>
-
-
-        
-        
-        
-        <PackageBlock />
       </div>
     </div>
   )

@@ -6,13 +6,13 @@ class Question extends React.Component {
 
   render() {
     return (
-      <div className="question">
+      <tr className="question">
         <Price />
         <PlayerScore />
         <PlayerScore />
         <PlayerScore />
         <PlayerScore />
-      </div>
+      </tr>
     )
   }
 }

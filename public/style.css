@@ -40,23 +40,54 @@
 }
 
 .main-container {
-  background-color: white;
+  background-color: rgb(250, 250, 250);
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
+}
+
+.scrollable {
+  width: 100%;
+  max-width: 500px;
+  overflow-y: scroll;
+  height: 400px;
+  /* scrollbar-color: var(--theme-green-main); */
+  scrollbar-color: var(--theme-green-main) var(--theme-green-light);
+  scrollbar-width: thin;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+.scrollable::-webkit-scrollbar-track {
+  background: var(--theme-green-light);        /* color of the tracking area */
+}
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: var(--theme-green-main);   /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--theme-green-light);  /* creates padding around scroll thumb */
 }
 
 .scores-block {
   width: 100%;
   max-width: 500px;
   text-align: center;
+  border-right: 1px solid var(--theme-green-light);
+  border-bottom: 1px solid var(--theme-green-light);
+  /* background-color: rgb(56, 56, 56);
+  color: white; */
 }
 
 .subject-block {
   
 }
 
+.question {
+  
+}
+
 .subject {
   background-color: var(--theme-green-light);
+  color: white;
   font-size: larger;
   font-weight: bold;
   padding: 5px;
@@ -66,24 +97,28 @@
 .price {
   font-weight: bold;
   width: 40px;
-
+  background-color: var(--theme-green-light);
+  border-bottom: 1px solid var(--theme-green-lighter);
 }
 
 .player-score {
-
+  border-bottom: 1px solid var(--theme-green-lighter);
 }
 
 .divider {
   border-top: solid 2px var(--theme-green-light);
+  background-color: var(--theme-green-light);
 }
 
 .sigma {
   font-weight: bold;
   font-size: x-large;
+  background-color: var(--theme-green-light);
 }
 
 .player-sum {
   font-weight: bold;
+  background-color: var(--theme-green-light);
 }
 
 .controls-block {
@@ -100,7 +135,7 @@
 }
 
 .player-name {
-  width: 80px
+  /* width: 100%; */
 }
 
 .player-button {
@@ -137,4 +172,12 @@
   font-size: x-large;
   font-weight: bold;
   color: rgb(241, 241, 241);
+}
+
+.package {
+  width: 100%;
+  resize: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
