@@ -1,0 +1,1 @@
+export const SET_PLAYERS_NUMBER = 'SET_PLAYERS_NUMBER'
