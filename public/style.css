@@ -113,6 +113,7 @@
 .sigma {
   font-weight: bold;
   font-size: x-large;
+  width: 40px;
   background-color: var(--theme-green-light);
 }
 
