@@ -5,7 +5,7 @@ import {
   CREATE_PLAYER,
   SET_PLAYER_NAME,
 
-  ADD_SUBJECT_BLOCK
+  ADD_SUBJECT
 } from './types'
 
 export const setPlayersNumber = (num) => (dispatch) => {
@@ -24,7 +24,10 @@ export const setPlayerName = ({ name, id}) => {
   return { type: SET_PLAYER_NAME, payload: { name, id }}
 }
 
-export const addSubjectBlock = () => (dispatch, getState) => {
-  //TODO replace null with an actual payload
-  dispatch({ type: ADD_SUBJECT_BLOCK, payload: null })
+export const addSubject = () => (dispatch, getState) => {
+  const newSubjectNumber = getState().game.subjects.length + 1
+  const newSubjectName = getState().game.subjectNames[newSubjectNumber] ||
+    `Тема #${newSubjectNumber}`
+  
+  dispatch({ type: ADD_SUBJECT, payload: newSubjectName })
 }

@@ -7,7 +7,9 @@ class SubjectBlock extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Subject />
+        <Subject 
+          subjectName={this.props.subjectName}
+        />
         <Question />
         <Question />
         <Question />

@@ -1,4 +1,5 @@
 import { 
+  ADD_SUBJECT,
   CREATE_PLAYER,
   SET_PLAYER_NAME
  } from '../actions/types'
@@ -27,7 +28,8 @@ const INITITAL_STATE = {
     }
   ],
   currentQuestionNum: 1,
-  subjectsNames: []
+  subjects: ['Тема #1', 'Тема #2'],
+  subjectNames: []
 }
 
 export default (state = INITITAL_STATE, action) => {
@@ -44,6 +46,10 @@ export default (state = INITITAL_STATE, action) => {
     
     case SET_PLAYER_NAME:
       newState.players[action.payload.id].name = action.payload.name
+      return {...newState}
+
+    case ADD_SUBJECT:
+      newState.subjects.push(action.payload)
       return {...newState}
     default: 
       return state

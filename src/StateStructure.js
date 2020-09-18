@@ -12,6 +12,7 @@ const state = {
         answers: []
       }
     ],
+    currentQuestionNum: 1,
     subjects: []
   }
 }

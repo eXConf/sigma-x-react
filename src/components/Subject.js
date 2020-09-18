@@ -6,7 +6,9 @@ class Subject extends React.Component {
     return (
       <React.Fragment>
         <tr>
-          <td colSpan="5" className="subject">SubjectName</td>
+          <td colSpan="5" className="subject">
+            {this.props.subjectName}
+          </td>
         </tr>
       </React.Fragment>
     )
