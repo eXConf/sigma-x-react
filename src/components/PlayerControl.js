@@ -1,8 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { setPlayerName } from '../actions'
 
 class PlayerControl extends React.Component {
+  componentDidMount() {
+    this.props.setPlayerName({ name: 'Serg', id: 0 })
+    // console.log(this.props)
+  }
 
   render() {
+    console.log(this.props)
     return (
       <div className="player-control">
         <div className="player-button plus">
@@ -21,4 +28,8 @@ class PlayerControl extends React.Component {
   }
 }
 
-export default PlayerControl
+const mapStateToProps = (state) => {
+  return {...state}
+}
+
+export default connect(mapStateToProps, { setPlayerName })(PlayerControl)
