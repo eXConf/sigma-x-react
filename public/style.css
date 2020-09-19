@@ -4,7 +4,7 @@
 
 :root {
   --price-width: 50px;
-  --player-score-wdith: 140px;
+  --player-score-wdith: 120px;
 
   --theme-green-main: rgb(96, 170, 96);
   --theme-green-dark: rgb(75, 133, 75);
@@ -77,12 +77,8 @@
   color: white; */
 }
 
-.subject-block {
-  
-}
-
 .question {
-  
+
 }
 
 .subject {
@@ -103,6 +99,7 @@
 
 .player-score {
   border-bottom: 1px solid var(--theme-green-lighter);
+  width: 120px;
 }
 
 .divider {
@@ -120,6 +117,7 @@
 .player-sum {
   font-weight: bold;
   background-color: var(--theme-green-light);
+  width: 120px;
 }
 
 .controls-block {
@@ -127,6 +125,10 @@
   height: 70px;
   background-color: var(--theme-green-lighter);
   text-align: center;
+}
+
+.controls-block td {
+  width: 1px;
 }
 
 .player-control {

@@ -24,7 +24,7 @@ class Question extends React.Component {
     const { players } = this.props
     const answer = players[player].answers[questionID]
     if (!answer) {
-      return '0'
+      return ''
     } else if (answer === '+') {
       return price
     } else if (answer === '-') {

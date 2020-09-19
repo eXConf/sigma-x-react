@@ -19,7 +19,7 @@ const INITITAL_STATE = {
     {
       name: 'Игрок 3',
       team: '',
-      answers: ['-']
+      answers: []
     },
     {
       name: 'Игрок 4',
@@ -28,7 +28,7 @@ const INITITAL_STATE = {
     }
   ],
   currentQuestionNum: 1,
-  subjects: ['Тема #1', 'Тема #2'],
+  subjects: ['Тема #1', 'Тема #2', 'Тема #3'],
   subjectNames: []
 }
 
