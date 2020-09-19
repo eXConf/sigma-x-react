@@ -30,13 +30,17 @@ class Question extends React.Component {
     } else if (answer === '-') {
       return -price
     }
-    
+  }
 
+  isActive = () => {
+    return (
+      this.props.currentQuestionNum === this.props.id ? 'active' : ''
+    )
   }
 
   render() {
     return (
-      <tr className="question">
+      <tr className={`question ${this.isActive()}`}>
         <Price price={this.props.price} />
         {this.renderPlayerScoreCell()}
       </tr>
@@ -47,7 +51,8 @@ class Question extends React.Component {
 const mapStateToProps = (state) => {
   return ({
     numberOfPlayers: state.settings.numberOfPlayers,
-    players: state.game.players
+    players: state.game.players,
+    currentQuestionNum: state.game.currentQuestionNum
   })
 }
 

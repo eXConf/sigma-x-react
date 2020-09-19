@@ -10,6 +10,8 @@
   --theme-green-dark: rgb(75, 133, 75);
   --theme-green-light: rgba(96, 170, 96, 0.5);
   --theme-green-lighter: rgba(96, 170, 96, 0.25);
+
+  --highlight-active-color: rgb(178, 220, 248);
 }
 
 .container {
@@ -70,6 +72,7 @@
 .scores-block {
   width: 100%;
   max-width: 500px;
+  border-collapse: collapse;
   text-align: center;
   border-right: 1px solid var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-light);
@@ -77,8 +80,10 @@
   color: white; */
 }
 
-.question {
-
+.question.active{
+  background-color: var(--highlight-active-color);
+  /* border: 0px solid white; */
+  
 }
 
 .subject {
@@ -95,6 +100,10 @@
   width: 40px;
   background-color: var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-lighter);
+}
+
+.active .price {
+  /* background-color: var(--highlight-active-color); */
 }
 
 .player-score {

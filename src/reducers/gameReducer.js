@@ -27,7 +27,7 @@ const INITITAL_STATE = {
       answers: [null, null, null, null, null, null, '+', '-']
     }
   ],
-  currentQuestionNum: 1,
+  currentQuestionNum: 0,
   subjects: ['Тема #1', 'Тема #2', 'Тема #3'],
   subjectNames: []
 }
