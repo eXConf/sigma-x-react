@@ -6,6 +6,7 @@ import {
   CREATE_PLAYER,
   SET_PLAYER_NAME,
 
+  SET_CURRENT_QUESTION_NUM,
   ADD_SUBJECT
 } from './types'
 
@@ -15,6 +16,10 @@ export const setPlayersNumber = (num) => (dispatch) => {
 
 export const setQuestionsNumber = (num) => (dispatch) => {
   dispatch({ type: SET_QUESTIONS_NUMBER, payload: num })
+}
+
+export const setCurrentQuestionNum = (num) => {
+  return ({ type: SET_CURRENT_QUESTION_NUM, payload: num })
 }
 
 export const setPriceMultiplier = (multiplier) => {

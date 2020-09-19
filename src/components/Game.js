@@ -29,10 +29,6 @@ class Game extends React.Component {
             <table className="scores-block">
               <tbody>
                 {this.renderSubjectBlocks()}
-                {/* <SubjectBlock />
-                <SubjectBlock />
-                <SubjectBlock />
-                <SubjectBlock /> */}
               </tbody>
             </table>
           </div>
@@ -51,7 +47,6 @@ class Game extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     currentQuestionNum: state.game.currentQuestionNum,
     subjects: state.game.subjects,
