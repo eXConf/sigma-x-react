@@ -15,6 +15,7 @@ class Game extends React.Component {
         <SubjectBlock 
           subjectName={subject}
           key={index}
+          subjectID={index}
         />
       )
     })
