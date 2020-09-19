@@ -9,22 +9,22 @@ const INITITAL_STATE = {
     {
       name: 'Игрок 1',
       team: '',
-      answers: []
+      answers: ['+', '-', null, null, '+']
     },
     {
       name: 'Игрок 2',
       team: '',
-      answers: []
+      answers: [null, '+']
     },
     {
       name: 'Игрок 3',
       team: '',
-      answers: []
+      answers: ['-']
     },
     {
       name: 'Игрок 4',
       team: '',
-      answers: []
+      answers: [null, null, null, null, null, null, '+', '-']
     }
   ],
   currentQuestionNum: 1,
