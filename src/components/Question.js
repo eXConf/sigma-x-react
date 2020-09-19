@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { setCurrentQuestionNum } from '../actions'
 import Price from './Price'
 
 class Question extends React.Component {
@@ -38,9 +39,16 @@ class Question extends React.Component {
     )
   }
 
+  onClick = () => {
+    this.props.setCurrentQuestionNum(this.props.id)
+  }
+
   render() {
     return (
-      <tr className={`question ${this.isActive()}`}>
+      <tr 
+        onClick={() => this.onClick()}
+        className={`question ${this.isActive()}`}
+      >
         <Price price={this.props.price} />
         {this.renderPlayerScoreCell()}
       </tr>
@@ -56,4 +64,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {})(Question)
+export default connect(mapStateToProps, {setCurrentQuestionNum})(Question)

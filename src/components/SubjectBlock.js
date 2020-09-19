@@ -7,7 +7,6 @@ class SubjectBlock extends React.Component {
 
   renderQuestions = () => {
     const {subjectID, numberOfQuestions, priceMultiplier} = this.props
-
     return [...Array(this.props.numberOfQuestions)].map(
       (el, index) => {
         const questionID = subjectID * numberOfQuestions + index
@@ -33,7 +32,6 @@ class SubjectBlock extends React.Component {
       <React.Fragment>
         {this.renderSubject()}
         {this.renderQuestions()}
-
       </React.Fragment>
       
     )
