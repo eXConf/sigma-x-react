@@ -112,7 +112,7 @@
 }
 
 .divider {
-  border-top: solid 2px var(--theme-green-light);
+  border-top: solid 10px var(--theme-green-light);
   background-color: var(--theme-green-light);
 }
 
