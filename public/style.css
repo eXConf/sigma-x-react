@@ -80,9 +80,14 @@
   color: white; */
 }
 
+.question:hover {
+  background-color: var(--theme-green-lighter);
+  cursor: pointer;
+}
+
 .question.active{
-  background-color: var(--highlight-active-color);
-  /* border: 0px solid white; */
+  background-color: var(--theme-green-lighter);
+  border: 2px solid var(--theme-green-main);
   
 }
 
