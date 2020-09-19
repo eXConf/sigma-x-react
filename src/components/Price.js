@@ -5,7 +5,7 @@ class Price extends React.Component {
   render() {
     return (
       <td className="price">
-        10
+        {this.props.price}
       </td>
     )
   }

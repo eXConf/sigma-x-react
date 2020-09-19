@@ -7,7 +7,7 @@ class Question extends React.Component {
   render() {
     return (
       <tr className="question">
-        <Price />
+        <Price price={this.props.price} />
         <PlayerScore />
         <PlayerScore />
         <PlayerScore />

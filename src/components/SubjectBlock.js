@@ -6,13 +6,14 @@ import Question from './Question'
 class SubjectBlock extends React.Component {
 
   renderQuestions = () => {
-    const {subjectID, numberOfQuestions} = this.props
+    const {subjectID, numberOfQuestions, priceMultiplier} = this.props
 
     return [...Array(this.props.numberOfQuestions)].map(
       (el, index) => {
         const questionID = subjectID * numberOfQuestions + index
+        const price = (index + 1) * priceMultiplier
         return (
-          <Question key={questionID} id={questionID} />
+          <Question key={questionID} id={questionID} price={price}/>
         )
       }
     )
@@ -41,7 +42,8 @@ class SubjectBlock extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
-    numberOfQuestions: state.settings.numberOfQuestions
+    numberOfQuestions: state.settings.numberOfQuestions,
+    priceMultiplier: state.settings.priceMultiplier
   })
 }
 

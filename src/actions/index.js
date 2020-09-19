@@ -1,6 +1,7 @@
 import {
   SET_PLAYERS_NUMBER,
   SET_QUESTIONS_NUMBER,
+  SET_PRICE_MULTIPLIER,
 
   CREATE_PLAYER,
   SET_PLAYER_NAME,
@@ -14,6 +15,10 @@ export const setPlayersNumber = (num) => (dispatch) => {
 
 export const setQuestionsNumber = (num) => (dispatch) => {
   dispatch({ type: SET_QUESTIONS_NUMBER, payload: num })
+}
+
+export const setPriceMultiplier = (multiplier) => {
+  return ({ type: SET_PRICE_MULTIPLIER, payload: multiplier })
 }
 
 export const createPlayer = (id) => {
