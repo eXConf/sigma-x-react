@@ -3,13 +3,9 @@ import { connect } from 'react-redux'
 import { setPlayerName } from '../actions'
 
 class PlayerControl extends React.Component {
-  componentDidMount() {
-    this.props.setPlayerName({ name: 'Serg', id: 0 })
-    // console.log(this.props)
-  }
+  state = {name: `Игрок ${this.props.playerID + 1}`}
 
   render() {
-    // console.log(this.props)
     return (
       <div className="player-control">
         <div className="player-button plus">
@@ -17,8 +13,21 @@ class PlayerControl extends React.Component {
           </div>
         <input 
           className="player-name" 
-          placeholder="PlayerName" 
           size="10"
+          type="text"
+          value={this.state.name}
+          onChange={(e) => {
+            e.preventDefault()
+            this.setState({name: e.target.value})
+            this.props.setPlayerName(
+              {name: e.target.value, id: this.props.playerID}
+            )
+          }}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              e.target.blur()
+            }
+          }}
         />
         <div className="player-button minus">
           <i className="fas fa-minus-square"></i>
@@ -29,7 +38,9 @@ class PlayerControl extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {...state}
+  return ({
+    players: state.game.players
+  })
 }
 
 export default connect(mapStateToProps, { setPlayerName })(PlayerControl)

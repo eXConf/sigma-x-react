@@ -147,7 +147,11 @@
 }
 
 .player-name {
-  /* width: 100%; */
+  text-align: center;
+  font-size: medium;
+  color: #555;
+  border: none;
+  width: 95%;
 }
 
 .player-button {
