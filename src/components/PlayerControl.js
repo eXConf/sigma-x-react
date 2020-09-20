@@ -5,13 +5,9 @@ import { setPlayerName } from '../actions'
 class PlayerControl extends React.Component {
   state = {name: `Игрок ${this.props.playerID + 1}`}
 
-  render() {
+  renderInput = () => {
     return (
-      <div className="player-control">
-        <div className="player-button plus">
-          <i className="fas fa-plus-square"></i>
-          </div>
-        <input 
+      <input 
           className="player-name" 
           size="10"
           type="text"
@@ -29,9 +25,19 @@ class PlayerControl extends React.Component {
             }
           }}
         />
+    )
+  }
+
+  render() {
+    return (
+      <div className="player-control">
+        <div className="player-button plus">
+          <i className="fas fa-plus-square"></i>
+        </div>
+        {this.renderInput()}
         <div className="player-button minus">
           <i className="fas fa-minus-square"></i>
-          </div>
+        </div>
       </div>
     )
   }
