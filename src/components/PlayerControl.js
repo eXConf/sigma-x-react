@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setPlayerName } from '../actions'
+import { setPlayerName, setPlayerAnswer } from '../actions'
 
 class PlayerControl extends React.Component {
   state = {name: `Игрок ${this.props.playerID + 1}`}
 
-  renderInput = () => {
+  renderNameInput = () => {
     return (
       <input 
           className="player-name" 
@@ -28,16 +28,29 @@ class PlayerControl extends React.Component {
     )
   }
 
+  renderPlayerScoreButton = (sign) => {
+    return (
+      <div 
+        className={`player-button ${sign}`}
+        onClick={() => {
+          this.props.setPlayerAnswer({
+            playerID: this.props.playerID,
+            questionID: this.props.currentQuestionNum,
+            scoreSign: sign === 'plus' ? '+' : '-'
+          })
+        }}
+      >
+        <i className={`fas fa-${sign}-square`}></i>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="player-control">
-        <div className="player-button plus">
-          <i className="fas fa-plus-square"></i>
-        </div>
-        {this.renderInput()}
-        <div className="player-button minus">
-          <i className="fas fa-minus-square"></i>
-        </div>
+        {this.renderPlayerScoreButton('plus')}
+        {this.renderNameInput()}
+        {this.renderPlayerScoreButton('minus')}
       </div>
     )
   }
@@ -45,8 +58,11 @@ class PlayerControl extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
-    players: state.game.players
+    players: state.game.players,
+    currentQuestionNum: state.game.currentQuestionNum
   })
 }
 
-export default connect(mapStateToProps, { setPlayerName })(PlayerControl)
+export default connect(
+    mapStateToProps, { setPlayerName, setPlayerAnswer }
+  )(PlayerControl)

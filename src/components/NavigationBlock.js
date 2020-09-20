@@ -38,7 +38,7 @@ class NavigationBlock extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
-    currentQuestionNum: state.game.currentQuestionNum
+    currentQuestionNum: state.game.currentQuestionNum,
   })
 }
 
