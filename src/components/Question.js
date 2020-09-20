@@ -47,7 +47,7 @@ class Question extends React.Component {
     return (
       <tr 
         onClick={() => this.onClick()}
-        className={`question ${this.isActive()}`}
+        className={`question ${this.isActive()} q${this.props.id}`}
       >
         <Price price={this.props.price} />
         {this.renderPlayerScoreCell()}

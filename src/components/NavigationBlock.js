@@ -4,8 +4,15 @@ import { setCurrentQuestionNum } from '../actions'
 
 class NavigationBlock extends React.Component {
 
+  scrollToCurrentQuestion = () => {
+    const activeQuestion = 
+      document.querySelector(`.q${this.props.currentQuestionNum}`)
+    activeQuestion.scrollIntoView({block: 'center', behavior: 'smooth'})
+  }
+
   onNextClicked = () => {
     this.props.setCurrentQuestionNum(this.props.currentQuestionNum + 1)
+    this.scrollToCurrentQuestion()
   }
 
   onPrevClicked = () => {
@@ -13,6 +20,7 @@ class NavigationBlock extends React.Component {
       return
     }
     this.props.setCurrentQuestionNum(this.props.currentQuestionNum - 1)
+    this.scrollToCurrentQuestion()
   }
 
   render() {
