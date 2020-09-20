@@ -23,12 +23,12 @@ class NavigationBlock extends React.Component {
             <button 
               onClick={() => this.onPrevClicked()} 
               className="nav-prev"
-            >&lt;&lt;</button>
+            ><i className="fas fa-chevron-left"></i></button>
             <button className="nav-current">2.4</button>
             <button 
               onClick={() => this.onNextClicked()} 
               className="nav-next"
-            >&gt;&gt;</button>
+            ><i className="fas fa-chevron-right"></i></button>
           </div>
         </td>
       </tr>
