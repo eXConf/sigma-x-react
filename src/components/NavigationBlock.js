@@ -26,7 +26,7 @@ class NavigationBlock extends React.Component {
   render() {
     return (
       <tr>
-        <td colSpan="5">
+        <td colSpan={this.props.numberOfPlayers + 1}>
           <div className="navigation-block">
             <button 
               onClick={() => this.onPrevClicked()} 
@@ -47,6 +47,7 @@ class NavigationBlock extends React.Component {
 const mapStateToProps = (state) => {
   return ({
     currentQuestionNum: state.game.currentQuestionNum,
+    numberOfPlayers: state.settings.numberOfPlayers
   })
 }
 

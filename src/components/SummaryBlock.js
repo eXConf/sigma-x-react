@@ -17,7 +17,7 @@ class SummaryBlock extends React.Component {
     return (
      <React.Fragment>
         <tr>
-          <td colSpan="5" className="divider"></td>
+          <td colSpan={this.props.numberOfPlayers + 1} className="divider"></td>
         </tr>
         <tr>
           <td className="sigma">Σ</td>

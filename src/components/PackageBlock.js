@@ -1,11 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class PackageBlock extends React.Component {
 
   render() {
     return (
       <tr>
-        <td colSpan="5">
+        <td colSpan={this.props.numberOfPlayers + 1}>
           <textarea cols="50" rows="10" className="package">
 
           </textarea>
@@ -15,4 +16,10 @@ class PackageBlock extends React.Component {
   }
 }
 
-export default PackageBlock
+const mapStateToProps = (state) => {
+  return ({
+    numberOfPlayers: state.settings.numberOfPlayers
+  })
+}
+
+export default connect(mapStateToProps, {})(PackageBlock)
