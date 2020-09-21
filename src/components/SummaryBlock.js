@@ -1,6 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class SummaryBlock extends React.Component {
+
+  renderPlayerSum = () => {
+    return [...Array(this.props.numberOfPlayers)].map(
+      (el, index) => {
+        return (
+          <td key={`p${index}`} className="player-sum">110</td>
+        )
+      }
+    )
+  }
 
   render() {
     return (
@@ -10,14 +21,17 @@ class SummaryBlock extends React.Component {
         </tr>
         <tr>
           <td className="sigma">Σ</td>
-          <td className="player-sum">130</td>
-          <td className="player-sum">40</td>
-          <td className="player-sum">-50</td>
-          <td className="player-sum">180</td>
+          {this.renderPlayerSum()}
         </tr> 
      </React.Fragment>
     )
   }
 }
 
-export default SummaryBlock
+const mapStateToProps = (state) => {
+  return ({
+    numberOfPlayers: state.settings.numberOfPlayers
+  })
+}
+
+export default connect(mapStateToProps, {})(SummaryBlock)
