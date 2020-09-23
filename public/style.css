@@ -48,6 +48,13 @@
   /* padding: 10px; */
 }
 
+.menu-switcher {
+  position: absolute;
+  padding: 4px 8px;
+  font-size: x-large;
+  color: rgb(39, 39, 39);
+}
+
 .scrollable {
   width: 100%;
   max-width: 500px;

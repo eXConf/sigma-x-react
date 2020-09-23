@@ -9,8 +9,7 @@ import PackageBlock from './PackageBlock'
 
 import { createPlayers } from '../actions'
 
-class Game extends React.Component {
-  
+class Game extends React.Component { 
   componentDidMount() {
     this.props.createPlayers() 
   }
@@ -26,11 +25,25 @@ class Game extends React.Component {
       )
     })
   }
+
+  renderMenuSwitcher = () => {
+    return (
+      <div 
+       className="menu-switcher"
+       onClick={() => {
+         this.props.switchMenuState()
+       }}
+      >
+        <i className="fas fa-bars"></i>
+      </div>
+    )
+  }
   
   render() {
     return (
       <React.Fragment>
         <div className="main-container">
+          {this.renderMenuSwitcher()}
           <div className="scrollable">
             <table className="scores-block">
               <tbody>

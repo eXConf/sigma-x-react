@@ -2,15 +2,29 @@ import React from 'react'
 import Menu from './Menu'
 import Game from './Game'
 
-const App = () => {
-  return (
-    <div className="container">
-      <div className="menu-container">
-        <Menu />
+class App extends React.Component {
+  
+  state = {menuEnabled: true}
+  componentDidMount() {
+    this.setState({menuEnabled: true})
+  }
+
+  switchMenuState = () => {
+    this.setState({menuEnabled: !this.state.menuEnabled})
+  }
+  render(){
+    return (
+      <div className="container">
+        {this.state.menuEnabled === true ? 
+        <div className="menu-container">
+          <Menu />
+        </div> : null}
+        <Game 
+          switchMenuState={this.switchMenuState} 
+        />
       </div>
-      <Game />
-    </div>
-  )
+    )
+  } 
 }
 
 export default App
