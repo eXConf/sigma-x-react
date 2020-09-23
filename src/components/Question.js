@@ -23,6 +23,9 @@ class Question extends React.Component {
 
   getPlayerScore = ({player, questionID}) => {
     const { players } = this.props
+    if (!players[player]) {
+      return
+    }
     const answer = players[player].answers[questionID]
     return answer
   }

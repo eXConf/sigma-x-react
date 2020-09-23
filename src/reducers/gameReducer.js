@@ -7,28 +7,7 @@ import {
  } from '../actions/types'
 
 const INITITAL_STATE = {
-  players: [
-    {
-      name: 'Игрок 1',
-      team: '',
-      answers: []
-    },
-    {
-      name: 'Игрок 2',
-      team: '',
-      answers: []
-    },
-    {
-      name: 'Игрок 3',
-      team: '',
-      answers: []
-    },
-    {
-      name: 'Игрок 4',
-      team: '',
-      answers: []
-    }
-  ],
+  players: [],
   currentQuestionNum: 0,
   subjects: ['Тема #1', 'Тема #2', 'Тема #3', 'Тема 4', 'Тема 5'],
   subjectNames: []

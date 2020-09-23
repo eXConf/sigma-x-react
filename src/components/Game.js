@@ -7,8 +7,14 @@ import ControlsBlock from './ControlsBlock'
 import NavigationBlock from './NavigationBlock'
 import PackageBlock from './PackageBlock'
 
+import { createPlayers } from '../actions'
+
 class Game extends React.Component {
   
+  componentDidMount() {
+    this.props.createPlayers() 
+  }
+
   renderSubjectBlocks = () => {
     return this.props.subjects.map((subject, index) => {
       return (
@@ -50,8 +56,9 @@ const mapStateToProps = (state) => {
   return {
     currentQuestionNum: state.game.currentQuestionNum,
     subjects: state.game.subjects,
-    subjectNames: state.game.subjectNames
+    subjectNames: state.game.subjectNames,
+    numberOfPlayers: state.settings.numberOfPlayers
   }
 }
 
-export default connect(mapStateToProps, {})(Game)
+export default connect(mapStateToProps, {createPlayers})(Game)

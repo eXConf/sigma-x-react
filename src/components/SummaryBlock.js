@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 class SummaryBlock extends React.Component {
 
   calcPlayerSum = (index) => {
+    if (!this.props.players[index]) {
+      return 0
+    }
     const scores = this.props.players[index].answers
     if (scores.length === 0) {
       return 0

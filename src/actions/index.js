@@ -30,14 +30,17 @@ export const setCurrentQuestionNum = (num) => {
   return ({ type: SET_CURRENT_QUESTION_NUM, payload: num })
 }
 
-export const createPlayer = (id) => (dispatch, getState) => {
-  const { players } = getState().game
-  players.push({
-    name: `Игрок ${id}`,
-    team: '',
-    answers: []
-  })
-  dispatch({ type: CREATE_PLAYER, payload: {...players} })
+export const createPlayers = () => (dispatch, getState) => {
+  const numOfPlayers = getState().settings.numberOfPlayers
+  const players = []
+  for (let i = 0; i < numOfPlayers; i++) {
+    players.push({
+      name: `Игрок ${i}`,
+      team: '',
+      answers: []
+    })
+  }
+  dispatch({ type: CREATE_PLAYER, payload: [...players] })
 }
 
 export const setPlayerName = ({ name, id}) => (dispatch, getState) => {
