@@ -14,23 +14,17 @@ class Question extends React.Component {
             className="player-score"
             key={`${id}.${index}`}
           >
-            {this.getPlayerScore({player: index, questionID: id, price})}
+            {this.getPlayerScore({player: index, questionID: id})}
           </td>
         )
       }
     )
   }
 
-  getPlayerScore = ({player, questionID, price}) => {
+  getPlayerScore = ({player, questionID}) => {
     const { players } = this.props
     const answer = players[player].answers[questionID]
-    if (!answer) {
-      return ''
-    } else if (answer === '+') {
-      return price
-    } else if (answer === '-') {
-      return -price
-    }
+    return answer
   }
 
   isActive = () => {

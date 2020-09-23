@@ -33,10 +33,12 @@ class PlayerControl extends React.Component {
       <div 
         className={`player-button ${sign}`}
         onClick={() => {
+          const currentPrice = (this.props.currentQuestionNum % 
+            this.props.numberOfQuestions + 1) * this.props.priceMultiplier
           this.props.setPlayerAnswer({
             playerID: this.props.playerID,
             questionID: this.props.currentQuestionNum,
-            scoreSign: sign === 'plus' ? '+' : '-'
+            score: sign === 'plus' ? currentPrice : -currentPrice
           })
         }}
       >
@@ -59,7 +61,9 @@ class PlayerControl extends React.Component {
 const mapStateToProps = (state) => {
   return ({
     players: state.game.players,
-    currentQuestionNum: state.game.currentQuestionNum
+    currentQuestionNum: state.game.currentQuestionNum,
+    numberOfQuestions: state.settings.numberOfQuestions,
+    priceMultiplier: state.settings.priceMultiplier
   })
 }
 

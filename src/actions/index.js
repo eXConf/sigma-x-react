@@ -47,13 +47,13 @@ export const setPlayerName = ({ name, id}) => (dispatch, getState) => {
 }
 
 export const setPlayerAnswer = 
-  ({ playerID, questionID, scoreSign}) => (dispatch, getState) => {
+  ({ playerID, questionID, score}) => (dispatch, getState) => {
   const { players } = getState().game
-  const currentSign = players[playerID].answers[questionID]
-  if (scoreSign === currentSign) {
+  const currentScore = players[playerID].answers[questionID]
+  if (score === currentScore) {
     players[playerID].answers[questionID] = null
   } else {
-    players[playerID].answers[questionID] = scoreSign
+    players[playerID].answers[questionID] = score
   }
   dispatch({
     type: SET_PLAYER_ANSWER,

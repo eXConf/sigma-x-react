@@ -11,12 +11,12 @@ const INITITAL_STATE = {
     {
       name: 'Игрок 1',
       team: '',
-      answers: ['+', '-', null, null, '+']
+      answers: []
     },
     {
       name: 'Игрок 2',
       team: '',
-      answers: [null, '+']
+      answers: []
     },
     {
       name: 'Игрок 3',
@@ -26,7 +26,7 @@ const INITITAL_STATE = {
     {
       name: 'Игрок 4',
       team: '',
-      answers: [null, null, null, null, null, null, '+', '-']
+      answers: []
     }
   ],
   currentQuestionNum: 0,
