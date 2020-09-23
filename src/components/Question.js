@@ -6,7 +6,7 @@ import Price from './Price'
 class Question extends React.Component {
 
   renderPlayerScoreCell = () => {
-    const { id, price, numberOfPlayers } = this.props
+    const { id, numberOfPlayers } = this.props
     return [...Array(numberOfPlayers)].map(
       (el, index) => {
         return (
