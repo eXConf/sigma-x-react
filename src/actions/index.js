@@ -71,5 +71,5 @@ export const addSubject = () => (dispatch, getState) => {
     `Тема #${newSubjectNumber}`
   subjects.push(newSubjectName)
   
-  dispatch({ type: ADD_SUBJECT, payload: {...subjects} })
+  dispatch({ type: ADD_SUBJECT, payload: [...subjects] })
 }

@@ -30,7 +30,8 @@ export default (state = INITITAL_STATE, action) => {
       return {...state, players: payload}
 
     case ADD_SUBJECT:
-      return {...state, subjects: payload}
+    console.log({...state, subjects: payload})  
+    return {...state, subjects: payload}
     default: 
       return state
   }

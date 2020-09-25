@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setCurrentQuestionNum } from '../actions'
+import { setCurrentQuestionNum, addSubject } from '../actions'
 
 class NavigationBlock extends React.Component {
 
@@ -11,7 +11,17 @@ class NavigationBlock extends React.Component {
   }
 
   onNextClicked = () => {
-    this.props.setCurrentQuestionNum(this.props.currentQuestionNum + 1)
+    const { 
+      setCurrentQuestionNum, 
+      currentQuestionNum, 
+      numberOfSubjects, 
+      numberOfQuestions,
+      addSubject
+    } = this.props
+    if (currentQuestionNum + 2 === numberOfSubjects * numberOfQuestions) {
+      addSubject()
+    }
+    setCurrentQuestionNum(currentQuestionNum + 1)
     this.scrollToCurrentQuestion()
   }
 
@@ -57,8 +67,9 @@ const mapStateToProps = (state) => {
   return ({
     currentQuestionNum: state.game.currentQuestionNum,
     numberOfPlayers: state.settings.numberOfPlayers,
-    numberOfQuestions: state.settings.numberOfQuestions
+    numberOfQuestions: state.settings.numberOfQuestions,
+    numberOfSubjects: state.game.subjects.length
   })
 }
 
-export default connect(mapStateToProps, {setCurrentQuestionNum})(NavigationBlock)
+export default connect(mapStateToProps, {setCurrentQuestionNum, addSubject})(NavigationBlock)
