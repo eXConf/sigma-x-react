@@ -47,14 +47,14 @@ class NavigationBlock extends React.Component {
           <div className="navigation-block">
             <button 
               onClick={() => this.onPrevClicked()} 
-              className="nav-prev"
+              className="nav-btn nav-prev"
             ><i className="fas fa-chevron-left"></i></button>
-            <button className="nav-current">
+            <button className="nav-btn nav-current">
               {this.getCurrentNav()}
             </button>
             <button 
               onClick={() => this.onNextClicked()} 
-              className="nav-next"
+              className="nav-btn nav-next"
             ><i className="fas fa-chevron-right"></i></button>
           </div>
         </td>

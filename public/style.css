@@ -133,7 +133,7 @@
   font-size: larger;
   font-weight: bold;
   padding: 5px;
-
+  cursor: default;
 }
 
 .price {
@@ -141,10 +141,6 @@
   width: 40px;
   background-color: var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-lighter);
-}
-
-.active .price {
-  /* background-color: var(--highlight-active-color); */
 }
 
 .player-score {
@@ -205,12 +201,15 @@
   margin: 5px;
 }
 
-.player-button.plus {
+.player-button {
   color: var(--theme-green-main);
-  /* background-color: var(--theme-green-lighter); */
 }
 
-.player-button.minus {
+.player-button:hover {
+  color: var(--theme-green-dark);
+}
+
+.player-button:active {
   color: var(--theme-green-main);
 }
 
@@ -221,14 +220,24 @@
   justify-content: space-evenly;
 }
 
-.nav-prev, .nav-next, .nav-current {
+.nav-btn {
   width: 70px;
   height: 40px;
   border: none;
+  outline: none;
+  cursor: pointer;
   background-color: var(--theme-green-main);
   font-size: x-large;
   font-weight: bold;
   color: rgb(241, 241, 241);
+}
+
+.nav-btn:hover {
+  background-color: var(--theme-green-dark);
+}
+
+.nav-btn:active {
+  background-color: var(--theme-green-main);
 }
 
 .package {
@@ -237,4 +246,5 @@
   margin: 0;
   padding: 0;
   border: 0;
+  outline: none;
 }
