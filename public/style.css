@@ -27,9 +27,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   width: 45px;
   padding: 10px 5px;
+}
+
+.hide-menu-btn {
+  text-align: center;
+  align-self: center;
+  background-color: rgba(1, 1, 1, 0);
+  border: none;
+  font-size: x-large;
+  color: white;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
 }
 
 .menu-item {
@@ -50,9 +63,24 @@
 
 .menu-switcher {
   position: absolute;
-  padding: 4px 8px;
-  font-size: x-large;
-  color: rgb(39, 39, 39);
+  /* margin-top: 2px; */
+  width: 30px;
+  height: 26px;
+  text-align: center;
+  font-size: larger;
+  color: white;
+  background: var(--theme-green-main);
+  box-shadow: 0 0 6px rgba(0,0,0,0.7);
+  cursor: pointer;
+}
+
+.menu-switcher:hover {
+  background: var(--theme-green-dark);
+}
+
+.menu-switcher i {
+  vertical-align: middle;
+  text-align: center;
 }
 
 .scrollable {

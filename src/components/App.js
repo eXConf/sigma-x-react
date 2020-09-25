@@ -6,7 +6,7 @@ class App extends React.Component {
   
   state = {menuEnabled: true}
   componentDidMount() {
-    this.setState({menuEnabled: true})
+    this.setState({menuEnabled: false})
   }
 
   switchMenuState = () => {
@@ -17,10 +17,11 @@ class App extends React.Component {
       <div className="container">
         {this.state.menuEnabled === true ? 
         <div className="menu-container">
-          <Menu />
+          <Menu switchMenuState={this.switchMenuState} />
         </div> : null}
         <Game 
-          switchMenuState={this.switchMenuState} 
+          switchMenuState={this.switchMenuState}
+          menuEnabled={this.state.menuEnabled} 
         />
       </div>
     )

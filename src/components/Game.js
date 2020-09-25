@@ -27,16 +27,18 @@ class Game extends React.Component {
   }
 
   renderMenuSwitcher = () => {
-    return (
-      <div 
-       className="menu-switcher"
-       onClick={() => {
-         this.props.switchMenuState()
-       }}
-      >
-        <i className="fas fa-bars"></i>
-      </div>
-    )
+    if (!this.props.menuEnabled) {
+      return (
+        <div 
+         className="menu-switcher"
+         onClick={() => {
+           this.props.switchMenuState()
+         }}
+        >
+          <i className="fas fa-chevron-right"></i>
+        </div>
+      )
+    }
   }
   
   render() {
