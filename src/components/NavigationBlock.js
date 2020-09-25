@@ -23,6 +23,13 @@ class NavigationBlock extends React.Component {
     this.scrollToCurrentQuestion()
   }
 
+  getCurrentNav = () => {
+    const {currentQuestionNum, numberOfQuestions} = this.props
+    const subjectNum = Math.floor(currentQuestionNum / numberOfQuestions) + 1
+    const questionNum = (currentQuestionNum % numberOfQuestions) + 1
+    return `${subjectNum}.${questionNum}`
+  }
+
   render() {
     return (
       <tr>
@@ -32,7 +39,9 @@ class NavigationBlock extends React.Component {
               onClick={() => this.onPrevClicked()} 
               className="nav-prev"
             ><i className="fas fa-chevron-left"></i></button>
-            <button className="nav-current">2.4</button>
+            <button className="nav-current">
+              {this.getCurrentNav()}
+            </button>
             <button 
               onClick={() => this.onNextClicked()} 
               className="nav-next"
@@ -47,7 +56,8 @@ class NavigationBlock extends React.Component {
 const mapStateToProps = (state) => {
   return ({
     currentQuestionNum: state.game.currentQuestionNum,
-    numberOfPlayers: state.settings.numberOfPlayers
+    numberOfPlayers: state.settings.numberOfPlayers,
+    numberOfQuestions: state.settings.numberOfQuestions
   })
 }
 
