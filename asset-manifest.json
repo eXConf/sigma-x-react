@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/sigma-x-react/static/js/main.55e29bf0.chunk.js",
+    "main.js.map": "/sigma-x-react/static/js/main.55e29bf0.chunk.js.map",
+    "runtime-main.js": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js",
+    "runtime-main.js.map": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js.map",
+    "static/js/2.0d26fad9.chunk.js": "/sigma-x-react/static/js/2.0d26fad9.chunk.js",
+    "static/js/2.0d26fad9.chunk.js.map": "/sigma-x-react/static/js/2.0d26fad9.chunk.js.map",
+    "index.html": "/sigma-x-react/index.html",
+    "precache-manifest.70d1febe38bb23a7d43259d45bea830f.js": "/sigma-x-react/precache-manifest.70d1febe38bb23a7d43259d45bea830f.js",
+    "service-worker.js": "/sigma-x-react/service-worker.js",
+    "static/js/2.0d26fad9.chunk.js.LICENSE.txt": "/sigma-x-react/static/js/2.0d26fad9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.36e6b1a0.js",
+    "static/js/2.0d26fad9.chunk.js",
+    "static/js/main.55e29bf0.chunk.js"
+  ]
+}
