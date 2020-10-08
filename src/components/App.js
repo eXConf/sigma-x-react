@@ -10,7 +10,7 @@ class App extends React.Component {
   
   state = {menuEnabled: true}
   componentDidMount() {
-    this.setState({menuEnabled: false})
+    this.setState({menuEnabled: true})
   }
 
   switchMenuState = () => {

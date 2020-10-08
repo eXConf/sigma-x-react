@@ -5,11 +5,11 @@ class SummaryBlock extends React.Component {
 
   calcPlayerResults = (index) => {
     if (!this.props.players[index]) {
-      return 0
+      return <>0 <br /> [+0/-0]</>
     }
     const scores = this.props.players[index].answers
     if (scores.length === 0) {
-      return 0
+      return <>0 <br /> [+0/-0]</>
     }
     const sum = scores.reduce((acc, current) => acc + current)
     const correct = scores.filter((score) => score > 0).length

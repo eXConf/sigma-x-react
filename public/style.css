@@ -10,7 +10,7 @@ html {
   --game-width: 32rem;
   --player-score-width: 7.5rem;
   --subjects-height: 40vh;
-  --control-block-height: 25vh;
+  --control-block-height: 27vh;
 
   --theme-green-main: rgb(96, 170, 96);
   --theme-green-dark: rgb(75, 133, 75);
@@ -56,11 +56,11 @@ html {
   /* width: 100%; */
   height: 2.6rem;
   margin-bottom: 0.6rem;
-  padding: 0 0.4rem;
+  padding: 0.2rem 0.2rem;
   background-color: var(--theme-green-dark);
   color: white;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
   justify-content: center;
   align-items: center;
@@ -174,7 +174,7 @@ html {
 
 .sigma {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 1.5rem;
   width: 2rem;
   background-color: var(--theme-green-light);
 }
@@ -263,6 +263,7 @@ html {
 .package {
   width: var(--game-width);
   height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 1vh);
+  min-height: 7rem;
   resize: none;
   padding: 0;
   margin: 0;
@@ -273,9 +274,32 @@ html {
   border-bottom: 1px solid var(--theme-green-light);
 }
 
-.new-game {
+.secondary-container {
   display: flex;
   width: var(--game-width);
+  /* background-color: greenyellow; */
+  /* align-items: center; */
+  padding: 2rem 0.5rem;
+  justify-content: center;
   border-right: 1px solid var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-light);
+}
+
+.new-game form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-game h2 {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.new-game form div {
+  padding: 0.1rem 0.3rem;
+  font-size: 1.2rem;
+}
+
+.new-game form button {
+  margin: 1rem auto;
 }
