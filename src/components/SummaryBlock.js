@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 class SummaryBlock extends React.Component {
 
-  calcPlayerSum = (index) => {
+  calcPlayerResults = (index) => {
     if (!this.props.players[index]) {
       return 0
     }
@@ -12,7 +12,13 @@ class SummaryBlock extends React.Component {
       return 0
     }
     const sum = scores.reduce((acc, current) => acc + current)
-    return sum || 0
+    const correct = scores.filter((score) => score > 0).length
+    const incorrect = scores.filter((score) => score < 0).length
+    return (
+      // <>{`${sum || 0}[+${correct}/-${incorrect}]`}</>
+      <>{sum || 0} <br />
+      {`[+${correct}/-${incorrect}]`}</>
+    )
   }
   
   renderPlayerSum = () => {
@@ -20,7 +26,7 @@ class SummaryBlock extends React.Component {
       (el, index) => {
         return (
           <td key={`p${index}`} className="player-sum">
-            {this.calcPlayerSum(index)}
+            {this.calcPlayerResults(index)}
           </td>
         )
       }
