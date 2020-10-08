@@ -60,9 +60,10 @@ class Game extends React.Component {
               <SummaryBlock />
               <ControlsBlock />
               <NavigationBlock />
-              <PackageBlock />
+              
             </tbody>
           </table>
+          <PackageBlock />
         </div>
       </React.Fragment>
     )
