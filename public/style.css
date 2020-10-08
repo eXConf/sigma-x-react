@@ -164,6 +164,7 @@
   font-weight: bold;
   background-color: var(--theme-green-light);
   width: 120px;
+  padding: 3px 0;
 }
 
 .controls-block {
