@@ -11,7 +11,9 @@ import { createPlayers } from '../actions'
 
 class Game extends React.Component { 
   componentDidMount() {
-    this.props.createPlayers() 
+    if (this.props.players.length === 0) {
+      this.props.createPlayers()
+    }
   }
 
   renderSubjectBlocks = () => {
@@ -72,7 +74,8 @@ const mapStateToProps = (state) => {
     currentQuestionNum: state.game.currentQuestionNum,
     subjects: state.game.subjects,
     subjectNames: state.game.subjectNames,
-    numberOfPlayers: state.settings.numberOfPlayers
+    numberOfPlayers: state.settings.numberOfPlayers,
+    players: state.game.players
   }
 }
 
