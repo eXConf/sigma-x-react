@@ -4,7 +4,8 @@
 
 :root {
   --price-width: 50px;
-  --player-score-wdith: 120px;
+  --game-width: 500px;
+  --player-score-width: 120px;
 
   --theme-green-main: rgb(96, 170, 96);
   --theme-green-dark: rgb(75, 133, 75);
@@ -85,7 +86,7 @@
 
 .scrollable {
   width: 100%;
-  max-width: 500px;
+  max-width: var(--game-width);
   overflow-y: scroll;
   height: 400px;
   /* scrollbar-color: var(--theme-green-main); */
@@ -107,7 +108,7 @@
 
 .scores-block {
   width: 100%;
-  max-width: 500px;
+  max-width: var(--game-width);
   border-collapse: collapse;
   text-align: center;
   border-right: 1px solid var(--theme-green-light);
@@ -145,7 +146,7 @@
 
 .player-score {
   border-bottom: 1px solid var(--theme-green-lighter);
-  width: 120px;
+  width: var(--player-score-width);
 }
 
 .divider {
@@ -163,7 +164,7 @@
 .player-sum {
   font-weight: bold;
   background-color: var(--theme-green-light);
-  width: 120px;
+  width: var(--player-score-width);
   padding: 3px 0;
 }
 
