@@ -2,10 +2,15 @@
   margin: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 :root {
-  --price-width: 50px;
-  --game-width: 500px;
-  --player-score-width: 120px;
+  --game-width: 32rem;
+  --player-score-width: 7.5rem;
+  --subjects-height: 40vh;
+  --control-block-height: 25vh;
 
   --theme-green-main: rgb(96, 170, 96);
   --theme-green-dark: rgb(75, 133, 75);
@@ -30,8 +35,8 @@
   align-items: center;
   text-align: center;
 
-  width: 45px;
-  padding: 10px 5px;
+  width: 5rem;
+  padding: 1rem 0.4rem;
 }
 
 .hide-menu-btn {
@@ -41,20 +46,21 @@
   border: none;
   font-size: x-large;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 0.7rem;
   outline: none;
   cursor: pointer;
 }
 
 .menu-item {
   display: flex;
-  width:40px;
-  height: 40px;
-  margin-bottom: 10px;
+  /* width: 100%; */
+  height: 2.6rem;
+  margin-bottom: 0.6rem;
+  padding: 0 0.4rem;
   background-color: var(--theme-green-dark);
   color: white;
   border: none;
-  font-size: small;
+  font-size: 0.9rem;
   text-decoration: none;
   justify-content: center;
   align-items: center;
@@ -65,16 +71,18 @@
 }
 
 .main-container {
+  /* background-color: rgb(158, 96, 96); */
   background-color: rgb(250, 250, 250);
-  width: 100%;
+  width: var(--game-width);
+  height: 100vh;
   /* padding: 10px; */
 }
 
 .menu-switcher {
   position: absolute;
   /* margin-top: 2px; */
-  width: 30px;
-  height: 26px;
+  width: 1.9rem;
+  height: 1.6rem;
   text-align: center;
   font-size: larger;
   color: white;
@@ -96,27 +104,28 @@
   width: 100%;
   max-width: var(--game-width);
   overflow-y: scroll;
-  height: 300px;
+  height: var(--subjects-height);
   /* scrollbar-color: var(--theme-green-main); */
   scrollbar-color: var(--theme-green-main) var(--theme-green-light);
   scrollbar-width: thin;
 }
 
 .scrollable::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 0.5rem;               /* width of the entire scrollbar */
 }
 .scrollable::-webkit-scrollbar-track {
   background: var(--theme-green-light);        /* color of the tracking area */
 }
 .scrollable::-webkit-scrollbar-thumb {
   background-color: var(--theme-green-main);   /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid var(--theme-green-light);  /* creates padding around scroll thumb */
+  border-radius: 1.2rem;       /* roundness of the scroll thumb */
+  border: 0.2rem solid var(--theme-green-light);  /* creates padding around scroll thumb */
 }
 
 .scores-block {
   width: 100%;
   max-width: var(--game-width);
+  height: var(--control-block-height);
   border-collapse: collapse;
   text-align: center;
   border-right: 1px solid var(--theme-green-light);
@@ -139,15 +148,16 @@
 .subject {
   background-color: var(--theme-green-light);
   color: white;
-  font-size: larger;
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 5px;
+  padding: 0.3rem;
   cursor: default;
 }
 
 .price {
   font-weight: bold;
-  width: 40px;
+  width: 2rem;
+  padding: 0.1rem 0;
   background-color: var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-lighter);
 }
@@ -158,14 +168,14 @@
 }
 
 .divider {
-  border-top: solid 10px var(--theme-green-light);
+  border-top: solid 0.6rem var(--theme-green-light);
   background-color: var(--theme-green-light);
 }
 
 .sigma {
   font-weight: bold;
   font-size: x-large;
-  width: 40px;
+  width: 2rem;
   background-color: var(--theme-green-light);
 }
 
@@ -173,12 +183,12 @@
   font-weight: bold;
   background-color: var(--theme-green-light);
   width: var(--player-score-width);
-  padding: 3px 0;
+  padding: 0.2rem 0;
 }
 
 .controls-block {
   width: 100%;
-  height: 70px;
+  height: 6.4rem;
   background-color: var(--theme-green-lighter);
   text-align: center;
 }
@@ -195,20 +205,20 @@
 
 .player-name {
   text-align: center;
-  font-size: medium;
+  font-size: 1rem;
   color: #555;
   border: none;
   width: 95%;
 }
 
 .player-button {
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 1.9rem;
   cursor: pointer;
   text-align: center;
-  font-size: x-large;
+  font-size: 1.5rem;
   border: none;
-  margin: 5px;
+  margin: 0.3rem;
 }
 
 .player-button {
@@ -231,8 +241,8 @@
 }
 
 .nav-btn {
-  width: 70px;
-  height: 40px;
+  width: 4.2rem;
+  height: 2.6rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -251,13 +261,16 @@
 }
 
 .package {
-  width: 100%;
+  width: var(--game-width);
+  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 1vh);
   resize: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   border: 0;
   outline: none;
-  font-size: x-large;
+  font-size: 1.2rem;
+  border-right: 1px solid var(--theme-green-light);
+  border-bottom: 1px solid var(--theme-green-light);
 }
 
 .new-game {
