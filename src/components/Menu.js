@@ -28,6 +28,34 @@ class Menu extends React.Component {
         >
           <div>Новая игра</div>
         </NavLink>
+        <NavLink 
+          to="/subjects" 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>Список тем</div>
+        </NavLink>
+        <NavLink 
+          to="/graph" 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>График</div>
+        </NavLink>
+        <NavLink 
+          to="/theme" 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>Цвета</div>
+        </NavLink>
+        <NavLink 
+          to="/about" 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>?</div>
+        </NavLink>
       </div>
     )
   }
