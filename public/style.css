@@ -47,13 +47,21 @@
 }
 
 .menu-item {
+  display: flex;
   width:40px;
   height: 40px;
   margin-bottom: 10px;
   background-color: var(--theme-green-dark);
   color: white;
   border: none;
-  font-size: x-small;
+  font-size: small;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-active {
+  background-color: green;
 }
 
 .main-container {
@@ -250,4 +258,11 @@
   border: 0;
   outline: none;
   font-size: x-large;
+}
+
+.new-game {
+  display: flex;
+  width: var(--game-width);
+  border-right: 1px solid var(--theme-green-light);
+  border-bottom: 1px solid var(--theme-green-light);
 }

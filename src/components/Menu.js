@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuItem from './MenuItem'
+import { NavLink } from 'react-router-dom'
 
 class Menu extends React.Component {
 
@@ -14,9 +14,20 @@ class Menu extends React.Component {
         >
           <i className="fas fa-chevron-left"></i>
         </button>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
+        <NavLink 
+          to="/" exact 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>Игра</div>
+        </NavLink>
+        <NavLink 
+          to="/newgame" 
+          className="menu-item" 
+          activeClassName="menu-active"
+        >
+          <div>Новая игра</div>
+        </NavLink>
       </div>
     )
   }
