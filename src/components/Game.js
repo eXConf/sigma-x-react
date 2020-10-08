@@ -28,26 +28,12 @@ class Game extends React.Component {
     })
   }
 
-  renderMenuSwitcher = () => {
-    if (!this.props.menuEnabled) {
-      return (
-        <div 
-         className="menu-switcher"
-         onClick={() => {
-           this.props.switchMenuState()
-         }}
-        >
-          <i className="fas fa-chevron-right"></i>
-        </div>
-      )
-    }
-  }
+
   
   render() {
     return (
       <React.Fragment>
         <div className="main-container">
-          {this.renderMenuSwitcher()}
           <div className="scrollable">
             <table className="scores-block">
               <tbody>

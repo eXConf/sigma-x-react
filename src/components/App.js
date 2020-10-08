@@ -16,6 +16,22 @@ class App extends React.Component {
   switchMenuState = () => {
     this.setState({menuEnabled: !this.state.menuEnabled})
   }
+
+  renderMenuSwitcher = () => {
+    if (!this.state.menuEnabled) {
+      return (
+        <div 
+         className="menu-switcher"
+         onClick={() => {
+           this.switchMenuState()
+         }}
+        >
+          <i className="fas fa-chevron-right"></i>
+        </div>
+      )
+    }
+  }
+
   render(){
     return (
       <div className="container">
@@ -23,7 +39,7 @@ class App extends React.Component {
           {this.state.menuEnabled === true ? 
           <div className="menu-container">
             <Menu switchMenuState={this.switchMenuState} />
-          </div> : null}
+          </div> : this.renderMenuSwitcher()}
           <Switch>
             <Route path="/" exact>
               <Game 
