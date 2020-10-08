@@ -88,7 +88,7 @@
   width: 100%;
   max-width: var(--game-width);
   overflow-y: scroll;
-  height: 400px;
+  height: 300px;
   /* scrollbar-color: var(--theme-green-main); */
   scrollbar-color: var(--theme-green-main) var(--theme-green-light);
   scrollbar-width: thin;
@@ -249,4 +249,5 @@
   padding: 0;
   border: 0;
   outline: none;
+  font-size: x-large;
 }

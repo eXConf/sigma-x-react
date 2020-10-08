@@ -7,7 +7,7 @@ class PackageBlock extends React.Component {
     return (
       <tr>
         <td colSpan={this.props.numberOfPlayers + 1}>
-          <textarea cols="50" rows="10" className="package">
+          <textarea cols="50" rows="6" className="package">
 
           </textarea>
         </td>
