@@ -23,27 +23,29 @@ class App extends React.Component {
           <div className="menu-container">
             <Menu switchMenuState={this.switchMenuState} />
           </div> : null}
-          <Route path="/" exact>
-            <Game 
-              switchMenuState={this.switchMenuState}
-              menuEnabled={this.state.menuEnabled} 
-            />
-          </Route>
-          <Route path="/newgame">
+          <Switch>
+            <Route path="/" exact>
+              <Game 
+                switchMenuState={this.switchMenuState}
+                menuEnabled={this.state.menuEnabled} 
+              />
+            </Route>
+            <Route path="/newgame">
 
-          </Route>
-          <Route path="/subjects">
+            </Route>
+            <Route path="/subjects">
 
-          </Route>
-          <Route path="/graph">
-            
-          </Route>
-          <Route path="/theme">
-            
-          </Route>
-          <Route path="/about">
-            
-          </Route>
+            </Route>
+            <Route path="/graph">
+              
+            </Route>
+            <Route path="/theme">
+              
+            </Route>
+            <Route path="/about">
+              
+            </Route>
+          </Switch>
         </Router>
       </div>
     )
