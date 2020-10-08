@@ -4,6 +4,7 @@ import history from '../history'
 
 import Menu from './Menu'
 import Game from './Game'
+import NewGame from './NewGame'
 
 class App extends React.Component {
   
@@ -31,7 +32,7 @@ class App extends React.Component {
               />
             </Route>
             <Route path="/newgame">
-
+              <NewGame />
             </Route>
             <Route path="/subjects">
 
