@@ -178,6 +178,13 @@ html {
   width: 2rem;
   background-color: var(--theme-green-light);
 }
+.sigma:hover {
+  cursor: pointer;
+  color: white;
+}
+.sigma:active {
+  color: black;
+}
 
 .player-sum {
   font-weight: bold;
