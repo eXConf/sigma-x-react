@@ -29,7 +29,7 @@ class NewGame extends React.Component {
               <label htmlFor="players-num">Число игроков: </label>
               <select 
                 value={this.state.players} 
-                onChange={(e) => this.setState({ players: e.target.value})} 
+                onChange={(e) => this.setState({ players: parseInt(e.target.value) })} 
                 id="players-num"
               >
                 <option value="2">2</option>
@@ -45,7 +45,7 @@ class NewGame extends React.Component {
               <label htmlFor="questions-num">Число вопросов в теме: </label>
               <select 
                 value={this.state.questions} 
-                onChange={(e) => this.setState({ questions: e.target.value })}
+                onChange={(e) => this.setState({ questions: parseInt(e.target.value) })}
                 id="questions-num"
               >
                 <option value="2">2</option>
@@ -63,7 +63,7 @@ class NewGame extends React.Component {
               <label htmlFor="multiplier">Мультипликатор стоимости вопроса: </label>
               <select 
                 value={this.state.multiplier} 
-                onChange={(e) => this.setState({ multiplier: e.target.value })}
+                onChange={(e) => this.setState({ multiplier: parseInt(e.target.value) })}
                 id="multiplier"
               >
                 <option value="1">1</option>
