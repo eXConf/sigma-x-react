@@ -29,8 +29,8 @@ export const setPriceMultiplier = (multiplier) => {
 
 //#endregion
 
-export const resetGame = () => {
-  return ({ type: RESET_GAME, payload: '' })
+export const resetGame = () => (dispatch) => {
+  dispatch ({ type: RESET_GAME, payload: '' })
 }
 
 export const setCurrentQuestionNum = (num) => {
