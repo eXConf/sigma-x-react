@@ -1,4 +1,6 @@
 import {
+  RESET_GAME,
+  
   SET_PLAYERS_NUMBER,
   SET_QUESTIONS_NUMBER,
   SET_PRICE_MULTIPLIER,
@@ -8,7 +10,8 @@ import {
 
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
-  ADD_SUBJECT
+  ADD_SUBJECT,
+  RESET_SUBJECTS
 } from './types'
 
 //#region SETTINGS
@@ -25,6 +28,10 @@ export const setPriceMultiplier = (multiplier) => {
 }
 
 //#endregion
+
+export const resetGame = () => {
+  return ({ type: RESET_GAME, payload: '' })
+}
 
 export const setCurrentQuestionNum = (num) => {
   return ({ type: SET_CURRENT_QUESTION_NUM, payload: num })
@@ -72,4 +79,8 @@ export const addSubject = () => (dispatch, getState) => {
   subjects.push(newSubjectName)
   
   dispatch({ type: ADD_SUBJECT, payload: [...subjects] })
+}
+
+export const resetSubjects = () => (dispatch) => {
+  dispatch({ type: RESET_SUBJECTS, payload: [] })
 }
