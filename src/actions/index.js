@@ -12,7 +12,8 @@ import {
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
   ADD_SUBJECT,
-  RESET_SUBJECTS
+  RESET_SUBJECTS,
+  SET_SUBJECT_NAMES
 } from './types'
 
 //#region SETTINGS
@@ -85,4 +86,13 @@ export const addSubject = () => (dispatch, getState) => {
 
 export const resetSubjects = () => (dispatch) => {
   dispatch({ type: RESET_SUBJECTS, payload: [] })
+}
+
+export const setSubjectNames = (names) => (dispatch, getState) => {
+  const newGame = {...getState().game}
+  newGame.subjectNames = [...names]
+  newGame.subjects.map((el, index) => {
+    return newGame.subjects[index] = newGame.subjectNames[index] || `Тема #${index + 1}`
+  })
+  dispatch({ type: SET_SUBJECT_NAMES, payload: newGame})
 }

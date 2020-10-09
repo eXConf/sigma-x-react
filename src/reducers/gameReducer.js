@@ -2,6 +2,7 @@ import {
   RESET_GAME,
   ADD_SUBJECT,
   RESET_SUBJECTS,
+  SET_SUBJECT_NAMES,
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
   CREATE_PLAYER,
@@ -43,6 +44,8 @@ export default (state = INITITAL_STATE, action) => {
         subjects: [...INITITAL_STATE.subjects], 
         subjectNames: []
       }
+    case SET_SUBJECT_NAMES:
+      return {...payload}
     default: 
       return state
   }
