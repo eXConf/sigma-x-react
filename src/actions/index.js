@@ -72,7 +72,7 @@ export const setPlayerAnswer =
 }
 
 export const addSubject = () => (dispatch, getState) => {
-  const { subjects } = getState().game
+  const subjects = [...getState().game.subjects]
   const newSubjectNumber = subjects.length + 1
   const newSubjectName = getState().game.subjectNames[newSubjectNumber] ||
     `Тема #${newSubjectNumber}`
