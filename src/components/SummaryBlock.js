@@ -25,6 +25,34 @@ class SummaryBlock extends React.Component {
     return {sum, correct, incorrect}
   }
 
+  getAllPlayersResults = () => {
+    const allResults = []
+    console.log(this.props.players.length)
+    this.props.players.forEach((el, index) => {
+      const results = this.calcPlayerResults(index)
+      const name = this.props.players[index].name
+      if (!results) {
+        allResults.push(`${name}: 0 [+0/-0]`)
+      } else {
+        const {sum, correct, incorrect} = results
+        allResults.push(`${name}: ${sum} [+${correct}/-${incorrect}]`)
+      }
+    });
+    return allResults
+  }
+
+  copyResultsToClipboard = () => {
+    const results = this.getAllPlayersResults().join('\r\n')
+    let dummy = document.createElement('textarea')
+    document.body.appendChild(dummy)
+    dummy.setAttribute('id', 'dummy')
+    document.getElementById('dummy').value = results
+    dummy.select()
+    dummy.setSelectionRange(0, 99999)
+    document.execCommand("copy")
+    document.body.removeChild(dummy)
+  }
+
   
   renderPlayerSum = () => {
     return [...Array(this.props.numberOfPlayers)].map(
@@ -45,7 +73,10 @@ class SummaryBlock extends React.Component {
           <td colSpan={this.props.numberOfPlayers + 1} className="divider"></td>
         </tr>
         <tr>
-          <td className="sigma">Σ</td>
+          <td 
+            className="sigma"
+            onClick={() => this.copyResultsToClipboard()}
+          >Σ</td>
           {this.renderPlayerSum()}
         </tr> 
      </React.Fragment>
