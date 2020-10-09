@@ -1,5 +1,7 @@
 import { 
+  RESET_GAME,
   ADD_SUBJECT,
+  RESET_SUBJECTS,
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
   CREATE_PLAYER,
@@ -9,7 +11,7 @@ import {
 const INITITAL_STATE = {
   players: [],
   currentQuestionNum: 0,
-  subjects: ['Тема #1', 'Тема #2', 'Тема #3', 'Тема 4', 'Тема 5'],
+  subjects: ['Тема #1', 'Тема #2', 'Тема #3'],
   subjectNames: []
 }
 
@@ -17,6 +19,9 @@ export default (state = INITITAL_STATE, action) => {
   const { payload } = action
 
   switch(action.type) {
+    case RESET_GAME:
+      return { ...INITITAL_STATE }
+    
     case CREATE_PLAYER:
       return {...state, players: payload}
     
@@ -30,8 +35,14 @@ export default (state = INITITAL_STATE, action) => {
       return {...state, players: payload}
 
     case ADD_SUBJECT:
-    console.log({...state, subjects: payload})  
-    return {...state, subjects: payload}
+      return {...state, subjects: payload}
+
+    case RESET_SUBJECTS:
+      return {
+        ...state, 
+        subjects: [...INITITAL_STATE.subjects], 
+        subjectNames: []
+      }
     default: 
       return state
   }
