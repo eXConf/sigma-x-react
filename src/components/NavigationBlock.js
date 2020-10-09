@@ -19,8 +19,7 @@ class NavigationBlock extends React.Component {
       addSubject
     } = this.props
     const totalNumOfQuestions = numberOfSubjects * numberOfQuestions
-    if (currentQuestionNum + 2 === totalNumOfQuestions
-      || currentQuestionNum + 1 === totalNumOfQuestions) {
+    if (totalNumOfQuestions - currentQuestionNum <= 2) {
       addSubject()
     }
     setCurrentQuestionNum(currentQuestionNum + 1)
