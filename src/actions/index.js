@@ -1,3 +1,4 @@
+import history from '../history'
 import {
   RESET_GAME,
   
@@ -31,6 +32,7 @@ export const setPriceMultiplier = (multiplier) => {
 
 export const resetGame = () => (dispatch) => {
   dispatch ({ type: RESET_GAME, payload: '' })
+  history.push('/')
 }
 
 export const setCurrentQuestionNum = (num) => {
