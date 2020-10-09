@@ -70,7 +70,7 @@ export const setPlayerAnswer =
   }
   dispatch({
     type: SET_PLAYER_ANSWER,
-    payload: {...players}
+    payload: [...players]
   })
 }
 
