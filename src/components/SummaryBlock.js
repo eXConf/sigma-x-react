@@ -3,30 +3,35 @@ import { connect } from 'react-redux'
 
 class SummaryBlock extends React.Component {
 
-  calcPlayerResults = (index) => {
-    if (!this.props.players[index]) {
-      return <>0 <br /> [+0/-0]</>
+  renderPlayerResults = (index) => {
+    const results = this.calcPlayerResults(index)
+    if (!results) {
+      return <>0 <br />[+0/-0]</>
     }
-    const scores = this.props.players[index].answers
-    if (scores.length === 0) {
-      return <>0 <br /> [+0/-0]</>
-    }
-    const sum = scores.reduce((acc, current) => acc + current)
-    const correct = scores.filter((score) => score > 0).length
-    const incorrect = scores.filter((score) => score < 0).length
+    const {sum, correct, incorrect} = results
     return (
-      // <>{`${sum || 0}[+${correct}/-${incorrect}]`}</>
-      <>{sum || 0} <br />
+      <>{sum} <br />
       {`[+${correct}/-${incorrect}]`}</>
     )
   }
+
+  calcPlayerResults = (index) => {
+    if (!this.props.players[index]) return null
+    const scores = this.props.players[index].answers
+    if (scores.length === 0) return null
+    const sum = scores.reduce((acc, current) => acc + current)
+    const correct = scores.filter((score) => score > 0).length
+    const incorrect = scores.filter((score) => score < 0).length
+    return {sum, correct, incorrect}
+  }
+
   
   renderPlayerSum = () => {
     return [...Array(this.props.numberOfPlayers)].map(
       (el, index) => {
         return (
           <td key={`p${index}`} className="player-sum">
-            {this.calcPlayerResults(index)}
+            {this.renderPlayerResults(index)}
           </td>
         )
       }
