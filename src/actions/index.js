@@ -56,7 +56,7 @@ export const createPlayers = () => (dispatch, getState) => {
 export const setPlayerName = ({ name, id}) => (dispatch, getState) => {
   const { players } = getState().game
   players[id].name = name
-  dispatch({ type: SET_PLAYER_NAME, payload: {...players}})
+  dispatch({ type: SET_PLAYER_NAME, payload: [...players] })
 }
 
 export const setPlayerAnswer = 
