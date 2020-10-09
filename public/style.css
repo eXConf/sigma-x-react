@@ -303,3 +303,10 @@ html {
 .new-game form button {
   margin: 1rem auto;
 }
+
+
+@media (max-width: 800px) and (orientation: portrait) {
+  html {
+    font-size: 12px;
+  }
+}
