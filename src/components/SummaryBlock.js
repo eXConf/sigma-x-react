@@ -75,6 +75,7 @@ class SummaryBlock extends React.Component {
         <tr>
           <td 
             className="sigma"
+            title="Кликните, чтобы скопировать счёт в буфер обмена"
             onClick={() => this.copyResultsToClipboard()}
           >Σ</td>
           {this.renderPlayerSum()}
