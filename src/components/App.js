@@ -1,6 +1,7 @@
 import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import history from '../history'
+import { connect } from 'react-redux'
 
 import Menu from './Menu'
 import Game from './Game'
@@ -10,9 +11,30 @@ import Graph from './Graph'
 
 class App extends React.Component {
   
-  state = {menuEnabled: true}
+  state = {menuEnabled: true, width: 700}
   componentDidMount() {
+    const width = document.body.offsetWidth
     this.setState({menuEnabled: true})
+    this.setGameWidth(width)
+    document.body.addEventListener('resize', this.onPageResize)
+  }
+
+  onPageResize = () => {
+    this.setState({width: document.body.offsetWidth})
+  }
+
+  setGameWidth = (width) => {
+    const numOfPlayers = this.props.players.length
+    let gameWidth, playerScoreWidth
+    if (width < numOfPlayers * 130) {
+      gameWidth = width
+      playerScoreWidth = width / numOfPlayers
+    } else {
+      width = numOfPlayers * 130
+      playerScoreWidth = 130
+    }
+    document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
+    document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
   }
 
   switchMenuState = () => {
@@ -71,4 +93,10 @@ class App extends React.Component {
   } 
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    players: state.game.players
+  }
+}
+
+export default connect(mapStateToProps, {})(App)

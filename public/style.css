@@ -7,8 +7,8 @@ html {
 }
 
 :root {
-  --game-width: 32rem;
-  --player-score-width: 7.5rem;
+  --game-width: 550px;
+  --player-score-width: 140px;
   --subjects-height: 40vh;
   --control-block-height: 27vh;
 
@@ -268,7 +268,7 @@ html {
 }
 
 .package {
-  width: var(--game-width);
+  width: 100%;
   height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 1vh);
   min-height: 7rem;
   resize: none;
@@ -332,8 +332,8 @@ html {
 }
 
 
-@media (max-width: 800px) and (orientation: portrait) {
+/* @media (max-width: 800px) and (orientation: portrait) {
   html {
     font-size: 12px;
   }
-}
+} */
