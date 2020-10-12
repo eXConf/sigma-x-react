@@ -11,28 +11,33 @@ import Graph from './Graph'
 
 class App extends React.Component {
   
-  state = {menuEnabled: true, width: 700}
+  state = {menuEnabled: true}
   componentDidMount() {
     const width = document.body.offsetWidth
     this.setState({menuEnabled: true})
     this.setGameWidth(width)
-    document.body.addEventListener('resize', this.onPageResize)
+    window.addEventListener('resize', this.onPageResize)
   }
 
   onPageResize = () => {
-    this.setState({width: document.body.offsetWidth})
+    this.setGameWidth(document.body.offsetWidth)
   }
 
   setGameWidth = (width) => {
-    const numOfPlayers = this.props.players.length
+    const numOfPlayers = this.props.players
+    console.log(width, numOfPlayers)
     let gameWidth, playerScoreWidth
-    if (width < numOfPlayers * 120) {
+    if (width / numOfPlayers <= 120) {
       gameWidth = width
       playerScoreWidth = width / numOfPlayers
+    } else if (width / numOfPlayers >= 150) {
+      gameWidth = numOfPlayers * 150
+      playerScoreWidth = 150
     } else {
-      width = numOfPlayers * 120
-      playerScoreWidth = 120
+      gameWidth = width
+      playerScoreWidth = width / numOfPlayers
     }
+    console.log(numOfPlayers)
     document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
     document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
   }
@@ -95,7 +100,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    players: state.game.players
+    players: state.settings.numberOfPlayers
   }
 }
 
