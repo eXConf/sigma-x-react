@@ -26,12 +26,12 @@ class App extends React.Component {
   setGameWidth = (width) => {
     const numOfPlayers = this.props.players.length
     let gameWidth, playerScoreWidth
-    if (width < numOfPlayers * 130) {
+    if (width < numOfPlayers * 120) {
       gameWidth = width
       playerScoreWidth = width / numOfPlayers
     } else {
-      width = numOfPlayers * 130
-      playerScoreWidth = 130
+      width = numOfPlayers * 120
+      playerScoreWidth = 120
     }
     document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
     document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)

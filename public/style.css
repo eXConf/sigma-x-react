@@ -10,7 +10,7 @@ html {
   --game-width: 550px;
   --player-score-width: 140px;
   --subjects-height: 40vh;
-  --control-block-height: 27vh;
+  --control-block-height: 22vh;
 
   --theme-green-main: rgb(96, 170, 96);
   --theme-green-dark: rgb(75, 133, 75);
