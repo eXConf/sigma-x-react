@@ -13,7 +13,9 @@ import {
   SET_PLAYER_ANSWER,
   ADD_SUBJECT,
   RESET_SUBJECTS,
-  SET_SUBJECT_NAMES
+  SET_SUBJECT_NAMES,
+
+  SET_UI_GAME_WIDTH
 } from './types'
 
 //#region SETTINGS
@@ -95,4 +97,22 @@ export const setSubjectNames = (names) => (dispatch, getState) => {
     return newGame.subjects[index] = newGame.subjectNames[index] || `Тема #${index + 1}`
   })
   dispatch({ type: SET_SUBJECT_NAMES, payload: newGame})
+}
+
+export const setUIGameWidth = (width) => (dispatch, getState) => {
+  const numOfPlayers = getState().settings.numberOfPlayers
+  let gameWidth, playerScoreWidth
+  if (width / numOfPlayers <= 120) {
+    gameWidth = width
+    playerScoreWidth = width / numOfPlayers
+  } else if (width / numOfPlayers >= 150) {
+    gameWidth = numOfPlayers * 150
+    playerScoreWidth = 150
+  } else {
+    gameWidth = width
+    playerScoreWidth = width / numOfPlayers
+  }
+  document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
+  document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
+  dispatch({ type: SET_UI_GAME_WIDTH, payload: null})
 }

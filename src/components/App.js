@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import history from '../history'
 import { connect } from 'react-redux'
-
+import { setUIGameWidth } from '../actions'
 import Menu from './Menu'
 import Game from './Game'
 import NewGame from './NewGame'
@@ -15,31 +15,12 @@ class App extends React.Component {
   componentDidMount() {
     const width = document.body.offsetWidth
     this.setState({menuEnabled: true})
-    this.setGameWidth(width)
+    this.props.setUIGameWidth(width)
     window.addEventListener('resize', this.onPageResize)
   }
 
   onPageResize = () => {
-    this.setGameWidth(document.body.offsetWidth)
-  }
-
-  setGameWidth = (width) => {
-    const numOfPlayers = this.props.players
-    console.log(width, numOfPlayers)
-    let gameWidth, playerScoreWidth
-    if (width / numOfPlayers <= 120) {
-      gameWidth = width
-      playerScoreWidth = width / numOfPlayers
-    } else if (width / numOfPlayers >= 150) {
-      gameWidth = numOfPlayers * 150
-      playerScoreWidth = 150
-    } else {
-      gameWidth = width
-      playerScoreWidth = width / numOfPlayers
-    }
-    console.log(numOfPlayers)
-    document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
-    document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
+    this.props.setUIGameWidth(document.body.offsetWidth)
   }
 
   switchMenuState = () => {
@@ -98,10 +79,4 @@ class App extends React.Component {
   } 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    players: state.settings.numberOfPlayers
-  }
-}
-
-export default connect(mapStateToProps, {})(App)
+export default connect(null, {setUIGameWidth})(App)

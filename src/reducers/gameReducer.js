@@ -6,7 +6,8 @@ import {
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
   CREATE_PLAYER,
-  SET_PLAYER_NAME
+  SET_PLAYER_NAME,
+  SET_UI_GAME_WIDTH
  } from '../actions/types'
 
 const INITITAL_STATE = {
@@ -46,6 +47,10 @@ export default (state = INITITAL_STATE, action) => {
       }
     case SET_SUBJECT_NAMES:
       return {...payload}
+
+    case SET_UI_GAME_WIDTH:
+      return state
+      
     default: 
       return state
   }

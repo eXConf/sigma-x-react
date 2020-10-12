@@ -4,7 +4,8 @@ import {
   setPlayersNumber,
   setQuestionsNumber,
   setPriceMultiplier,
-  resetGame
+  resetGame,
+  setUIGameWidth
 } from '../actions'
 
 class NewGame extends React.Component {
@@ -96,6 +97,7 @@ class NewGame extends React.Component {
     this.props.setQuestionsNumber(this.state.questions)
     this.props.setPriceMultiplier(this.state.multiplier)
     this.props.resetGame()
+    this.props.setUIGameWidth(document.body.offsetWidth)
   }
 }
 
@@ -103,5 +105,6 @@ export default connect(null, {
   setPlayersNumber,
   setQuestionsNumber,
   setPriceMultiplier,
-  resetGame
+  resetGame,
+  setUIGameWidth
  })(NewGame)
