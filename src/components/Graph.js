@@ -16,7 +16,8 @@ class Graph extends React.Component {
               }} 
               width={600}
               height={400}
-              options={this.graphOptions} 
+              options={this.graphOptions}
+              plugins={this.graphPlugins}
             />
         </div>
       </div>
@@ -47,6 +48,14 @@ class Graph extends React.Component {
       }
     },
   }
+
+  graphPlugins = [{
+    beforeDraw: function(chartInstance, easing) {
+      var ctx = chartInstance.chart.ctx
+      ctx.fillStyle = 'white' // Меняем цвет здесь
+      ctx.fillRect(0, 0, 600, 400)
+    }
+  }]
 
   getDatasets = () => {
     let { players, maxQuestions } = this.props
