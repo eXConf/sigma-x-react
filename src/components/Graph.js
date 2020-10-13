@@ -47,6 +47,10 @@ class Graph extends React.Component {
         fontSize: 16
       }
     },
+    animation: false,
+    layout: {
+      padding: 1
+    }
   }
 
   graphPlugins = [{
