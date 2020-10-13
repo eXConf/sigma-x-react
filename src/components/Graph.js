@@ -59,19 +59,12 @@ class Graph extends React.Component {
         playerData.fill = false // Отменяем заливку
         // Превращаем очки за вопрос в сумму очков на момент вопроса
         let scores = []
-        for (let y = 0; y < (maxQuestions + 1); y++) {
-            let score = players[i].answers[y]
+        scores.push(0)
+        for (let y = 1; y < (maxQuestions + 2); y++) {
+            let score = players[i].answers[y - 1]
             // Если очки на этом вопросе не были начислены
             if (score === undefined) { 
-                // Если это первый вопрос и нет очков, пишем 0 очков
-                if (y === 0) {
-                    score = 0
-                } 
-                // Если нет очков и это не первый вопрос,
-                // то берем сумму очков из предыдущего вопроса
-                else {
-                    score = scores[y - 1]
-                }
+              score = scores[y - 1]
             }
             // Если очки на этом вопросе были начислены, то
             // добавляем их к сумме предыдущих очков
@@ -81,7 +74,7 @@ class Graph extends React.Component {
             scores.push(score)
         }
         playerData.data = scores
-        arr.push(playerData)
+        arr.push({...playerData})
     }
     return arr
   }
