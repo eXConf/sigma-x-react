@@ -18,7 +18,7 @@ class PackageBlock extends React.Component {
     return text.split('\n').map((el, index) => {
       if (el && el !== '\r' && el !== ' ') {
         return (
-          <React.Fragment>
+          <React.Fragment key={`package-text-${index}`}>
             <option>{el}</option>
             <option></option>
           </React.Fragment>
