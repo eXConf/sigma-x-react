@@ -33,7 +33,7 @@ class Menu extends React.Component {
           className="menu-item" 
           activeClassName="menu-active"
         >
-          <div>Список тем</div>
+          <div>Темы и вопросы</div>
         </NavLink>
         <NavLink 
           to="/graph" 

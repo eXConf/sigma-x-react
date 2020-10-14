@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setSubjectNames } from '../actions'
+import { setSubjectNames, setPackageText } from '../actions'
 
 class SubjectsList extends React.Component {
-  state = { subjects: '' }
+  state = { subjects: '', packageText: '' }
 
   componentDidMount() {
     const subjects = this.props.subjects.join('\n')
-    this.setState({ subjects })
+    const { packageText } = this.props
+    this.setState({ subjects, packageText })
   }
 
   render() {
@@ -21,6 +22,13 @@ class SubjectsList extends React.Component {
             value={this.state.subjects}
           >
           </textarea>
+          <h2>Текст пакета</h2>
+          <textarea 
+            placeholder={`Вставьте содержимое пакета сюда. Его форматированная версия появится на экране игры`}
+            onChange={this.onPackageTextChange}
+            value={this.state.packageText}
+          >
+          </textarea>
         </div>
       </div>
     )
@@ -28,18 +36,29 @@ class SubjectsList extends React.Component {
 
   onSubjectsListChange = (e) => {
     const subjects = e.target.value
-    this.setState({ subjects: subjects })
+    this.setState({ subjects })
     if (subjects) {
       const subjectsArray = subjects.split('\n')
       this.props.setSubjectNames(subjectsArray)
+    }
+  }
+
+  onPackageTextChange = (e) => {
+    const packageText = e.target.value
+    this.setState({ packageText })
+    if (packageText) {
+      this.props.setPackageText(packageText)
     }
   }
 }
 
 const mapStateToProps = (state) => {
   return ({
-    subjects: state.game.subjectNames
+    subjects: state.game.subjectNames,
+    packageText: state.game.packageText
   })
 }
 
-export default connect(mapStateToProps, {setSubjectNames})(SubjectsList)
+export default connect(mapStateToProps, {
+  setSubjectNames, setPackageText
+})(SubjectsList)
