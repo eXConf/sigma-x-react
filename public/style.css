@@ -14,11 +14,11 @@ html {
   --subjects-height: 40vh;
   --control-block-height: 22vh;
 
-  --theme-green-main: rgb(71, 71, 71);
-  --theme-green-dark: rgb(47, 47, 47);
-  --theme-green-darker: rgb(24, 24, 24);
-  --theme-green-light: rgb(204, 204, 204);
-  --theme-green-lighter: rgb(246, 246, 246);
+  --theme-main: rgb(71, 71, 71);
+  --theme-dark: rgb(47, 47, 47);
+  --theme-darker: rgb(24, 24, 24);
+  --theme-light: rgb(170, 170, 170);
+  --theme-lighter: rgb(218, 218, 218);
 
   --highlight-active-color: rgb(216, 216, 216);
 }
@@ -30,7 +30,7 @@ html {
 }
 
 .menu-container {
-  background-color: var(--theme-green-main);
+  background-color: var(--theme-main);
   color: white;
 
   display: flex;
@@ -62,7 +62,7 @@ html {
   height: 2.6rem;
   margin-bottom: 0.6rem;
   padding: 0.2rem 0.2rem;
-  background-color: var(--theme-green-dark);
+  background-color: var(--theme-dark);
   color: white;
   border: none;
   font-size: 1rem;
@@ -72,7 +72,7 @@ html {
 }
 
 .menu-active {
-  background-color: var(--theme-green-darker);
+  background-color: var(--theme-darker);
 }
 
 .main-container {
@@ -91,13 +91,13 @@ html {
   text-align: center;
   font-size: larger;
   color: white;
-  background: var(--theme-green-main);
+  background: var(--theme-main);
   box-shadow: 0 0 6px rgba(0,0,0,0.7);
   cursor: pointer;
 }
 
 .menu-switcher:hover {
-  background: var(--theme-green-dark);
+  background: var(--theme-dark);
 }
 
 .menu-switcher i {
@@ -110,21 +110,21 @@ html {
   max-width: var(--game-width);
   overflow-y: scroll;
   height: var(--subjects-height);
-  /* scrollbar-color: var(--theme-green-main); */
-  scrollbar-color: var(--theme-green-main) var(--theme-green-light);
+  /* scrollbar-color: var(--theme-main); */
+  scrollbar-color: var(--theme-main) var(--theme-light);
   scrollbar-width: thin;
 }
 
 .scrollable::-webkit-scrollbar {
-  width: 0.5rem;               /* width of the entire scrollbar */
+  width: 0.7rem;               /* width of the entire scrollbar */
 }
 .scrollable::-webkit-scrollbar-track {
-  background: var(--theme-green-light);        /* color of the tracking area */
+  background: var(--theme-light);        /* color of the tracking area */
 }
 .scrollable::-webkit-scrollbar-thumb {
-  background-color: var(--theme-green-main);   /* color of the scroll thumb */
+  background-color: var(--theme-main);   /* color of the scroll thumb */
   border-radius: 1.2rem;       /* roundness of the scroll thumb */
-  border: 0.2rem solid var(--theme-green-light);  /* creates padding around scroll thumb */
+  border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
 }
 
 .scores-block {
@@ -133,25 +133,25 @@ html {
   height: var(--control-block-height);
   border-collapse: collapse;
   text-align: center;
-  border-right: 1px solid var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-light);
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
   /* background-color: rgb(56, 56, 56);
   color: white; */
 }
 
 .question:hover {
-  background-color: var(--theme-green-lighter);
+  background-color: var(--theme-light);
   cursor: pointer;
 }
 
 .question.active{
-  background-color: var(--theme-green-lighter);
-  border: 2px solid var(--theme-green-main);
+  background-color: var(--theme-lighter);
+  border: 2px solid var(--theme-main);
   
 }
 
 .subject {
-  background-color: var(--theme-green-dark);
+  background-color: var(--theme-dark);
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -163,25 +163,25 @@ html {
   font-weight: bold;
   width: 2rem;
   padding: 0.1rem 0;
-  background-color: var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-lighter);
+  background-color: var(--theme-light);
+  border-bottom: 1px solid var(--theme-lighter);
 }
 
 .player-score {
-  border-bottom: 1px solid var(--theme-green-lighter);
+  border-bottom: 1px solid var(--theme-lighter);
   width: var(--player-score-width);
 }
 
 .divider {
-  border-top: solid 0.6rem var(--theme-green-light);
-  background-color: var(--theme-green-light);
+  border-top: solid 0.6rem var(--theme-light);
+  background-color: var(--theme-light);
 }
 
 .sigma {
   font-weight: bold;
   font-size: 1.5rem;
   width: 2rem;
-  background-color: var(--theme-green-light);
+  background-color: var(--theme-light);
 }
 .sigma:hover {
   cursor: pointer;
@@ -193,7 +193,7 @@ html {
 
 .player-sum {
   font-weight: bold;
-  background-color: var(--theme-green-light);
+  background-color: var(--theme-light);
   width: var(--player-score-width);
   padding: 0.2rem 0;
 }
@@ -201,7 +201,7 @@ html {
 .controls-block {
   width: 100%;
   height: 6.4rem;
-  background-color: var(--theme-green-lighter);
+  background-color: var(--theme-lighter);
   text-align: center;
 }
 
@@ -234,15 +234,15 @@ html {
 }
 
 .player-button {
-  color: var(--theme-green-main);
+  color: var(--theme-main);
 }
 
 .player-button:hover {
-  color: var(--theme-green-dark);
+  color: var(--theme-dark);
 }
 
 .player-button:active {
-  color: var(--theme-green-main);
+  color: var(--theme-main);
 }
 
 .navigation-block {
@@ -259,23 +259,23 @@ html {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: var(--theme-green-main);
+  background-color: var(--theme-main);
   font-size: x-large;
   font-weight: bold;
   color: rgb(241, 241, 241);
 }
 
 .nav-btn:hover {
-  background-color: var(--theme-green-dark);
+  background-color: var(--theme-dark);
 }
 
 .nav-btn:active {
-  background-color: var(--theme-green-main);
+  background-color: var(--theme-main);
 }
 
 .package {
   width: 100%;
-  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 6vh);
+  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 2vh);
   min-height: 7rem;
   resize: none;
   padding: 0;
@@ -283,9 +283,36 @@ html {
   border: 0;
   outline: none;
   font-size: 1.4rem;
-  overflow: hidden;
-  border-right: 1px solid var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-light);
+  
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
+
+  overflow-y: scroll;
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
+}
+
+.package::-webkit-scrollbar {
+  width: 0.7rem;              /* width of the entire scrollbar */
+}
+.package::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.package::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
+}
+
+option {
+  display: block;
+  white-space: normal;
+  color: black;
+}
+
+option:checked {
+  background: black linear-gradient(0deg, var(--theme-light) 0%, var(--theme-light) 100%);
+  color: black;
 }
 
 .secondary-container {
@@ -293,10 +320,10 @@ html {
   width: var(--game-width);
   /* background-color: greenyellow; */
   /* align-items: center; */
-  padding: 2rem 0.5rem;
+  padding: 1rem 0.5rem;
   justify-content: center;
-  border-right: 1px solid var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-light);
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
 }
 
 .new-game form {
@@ -327,15 +354,32 @@ html {
 
 .subjects-list h2, .graph h2 {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .subjects-list textarea {
   display: block;
   resize: none;
   width: 90%;
-  height: 50vh;
+  height: 35vh;
   min-height: 10rem;
   font-size: 1.2rem;
+  overflow-y: scroll;
+  height: var(--subjects-height);
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
+}
+
+.subjects-list textarea::-webkit-scrollbar {
+width: 0.7rem;              /* width of the entire scrollbar */
+}
+.subjects-list textarea::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.subjects-list textarea::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
 }
 
 
