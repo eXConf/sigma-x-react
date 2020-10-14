@@ -105,6 +105,7 @@ export const setSubjectNames = (names) => (dispatch, getState) => {
 
 export const setPackageText = (text) => (dispatch, getState) => {
   dispatch({ type: SET_PACKAGE_TEXT, payload: text})
+  dispatch(saveStateToLocalStorage())
 }
 
 export const setUIGameWidth = (width) => (dispatch, getState) => {
@@ -124,4 +125,31 @@ export const setUIGameWidth = (width) => (dispatch, getState) => {
   document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
   document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
   dispatch({ type: SET_UI_GAME_WIDTH, payload: null})
+}
+
+let allowRecording = true
+
+export const saveStateToLocalStorage = () => (dispatch, getState) => {
+  if (allowRecording) {
+    allowRecording = false
+
+    setTimeout(() => {
+      console.log('saved state to local storage')
+      localStorage.setItem('state', JSON.stringify(getState()))
+      allowRecording = true
+    }, 1000);
+
+  }
+  
+  dispatch({ type: SAVE_STATE_TO_LOCAL_STORAGE, payload: null })
+}
+
+export const loadStateFromLocalStorage = () => (dispatch, getState) => {
+  const state = JSON.parse(localStorage.getItem('state'))
+
+  if (state) {
+    dispatch({ type: LOAD_STATE_FROM_LOCAL_STORAGE, payload: state })
+  } else {
+    dispatch({ type: LOAD_STATE_FROM_LOCAL_STORAGE, payload: getState() })
+  }
 }
