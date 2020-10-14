@@ -14,8 +14,12 @@ import {
   ADD_SUBJECT,
   RESET_SUBJECTS,
   SET_SUBJECT_NAMES,
+  SET_PACKAGE_TEXT,
 
-  SET_UI_GAME_WIDTH
+  SET_UI_GAME_WIDTH,
+
+  SAVE_STATE_TO_LOCAL_STORAGE,
+  LOAD_STATE_FROM_LOCAL_STORAGE
 } from './types'
 
 //#region SETTINGS
@@ -97,6 +101,10 @@ export const setSubjectNames = (names) => (dispatch, getState) => {
     return newGame.subjects[index] = newGame.subjectNames[index] || `Тема #${index + 1}`
   })
   dispatch({ type: SET_SUBJECT_NAMES, payload: newGame})
+}
+
+export const setPackageText = (text) => (dispatch, getState) => {
+  dispatch({ type: SET_PACKAGE_TEXT, payload: text})
 }
 
 export const setUIGameWidth = (width) => (dispatch, getState) => {
