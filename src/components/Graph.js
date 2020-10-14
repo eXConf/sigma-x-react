@@ -57,7 +57,7 @@ class Graph extends React.Component {
     beforeDraw: function(chartInstance, easing) {
       var ctx = chartInstance.chart.ctx
       ctx.fillStyle = 'white' // Меняем цвет здесь
-      ctx.fillRect(0, 0, 600, 400)
+      ctx.fillRect(0, 0, 1920, 1080)
     }
   }]
 
