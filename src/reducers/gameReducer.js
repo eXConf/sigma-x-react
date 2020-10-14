@@ -57,6 +57,13 @@ export default (state = INITITAL_STATE, action) => {
 
     case SET_UI_GAME_WIDTH:
       return state
+
+    case SAVE_STATE_TO_LOCAL_STORAGE:
+      return state
+
+    case LOAD_STATE_FROM_LOCAL_STORAGE:
+      return {...payload.game}
+      
     default: 
       return state
   }
