@@ -275,7 +275,7 @@ html {
 
 .package {
   width: 100%;
-  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 2vh);
+  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 6vh);
   min-height: 7rem;
   resize: none;
   padding: 0;
