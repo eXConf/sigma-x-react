@@ -101,13 +101,14 @@ export const setSubjectNames = (names) => (dispatch, getState) => {
 
 export const setUIGameWidth = (width) => (dispatch, getState) => {
   const numOfPlayers = getState().settings.numberOfPlayers
+  const baseWidth = 130
   let gameWidth, playerScoreWidth
   if (width / numOfPlayers <= 120) {
     gameWidth = width
     playerScoreWidth = width / numOfPlayers
-  } else if (width / numOfPlayers >= 150) {
-    gameWidth = numOfPlayers * 150
-    playerScoreWidth = 150
+  } else if (width / numOfPlayers >= baseWidth) {
+    gameWidth = numOfPlayers * baseWidth
+    playerScoreWidth = baseWidth
   } else {
     gameWidth = width
     playerScoreWidth = width / numOfPlayers
