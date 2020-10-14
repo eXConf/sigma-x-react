@@ -40,10 +40,12 @@ export const setPriceMultiplier = (multiplier) => {
 export const resetGame = () => (dispatch) => {
   dispatch ({ type: RESET_GAME, payload: '' })
   history.push('/')
+  dispatch( saveStateToLocalStorage() )
 }
 
-export const setCurrentQuestionNum = (num) => {
-  return ({ type: SET_CURRENT_QUESTION_NUM, payload: num })
+export const setCurrentQuestionNum = (num) => (dispatch) => {
+  dispatch({ type: SET_CURRENT_QUESTION_NUM, payload: num })
+  dispatch( saveStateToLocalStorage() )
 }
 
 export const createPlayers = () => (dispatch, getState) => {
@@ -63,6 +65,7 @@ export const setPlayerName = ({ name, id}) => (dispatch, getState) => {
   const { players } = getState().game
   players[id].name = name
   dispatch({ type: SET_PLAYER_NAME, payload: [...players] })
+  dispatch( saveStateToLocalStorage() )
 }
 
 export const setPlayerAnswer = 
@@ -78,6 +81,7 @@ export const setPlayerAnswer =
     type: SET_PLAYER_ANSWER,
     payload: [...players]
   })
+  dispatch( saveStateToLocalStorage() )
 }
 
 export const addSubject = () => (dispatch, getState) => {
@@ -88,6 +92,7 @@ export const addSubject = () => (dispatch, getState) => {
   subjects.push(newSubjectName)
   
   dispatch({ type: ADD_SUBJECT, payload: [...subjects] })
+  dispatch( saveStateToLocalStorage() )
 }
 
 export const resetSubjects = () => (dispatch) => {
@@ -101,6 +106,7 @@ export const setSubjectNames = (names) => (dispatch, getState) => {
     return newGame.subjects[index] = newGame.subjectNames[index] || `Тема #${index + 1}`
   })
   dispatch({ type: SET_SUBJECT_NAMES, payload: newGame})
+  dispatch( saveStateToLocalStorage() )
 }
 
 export const setPackageText = (text) => (dispatch, getState) => {
@@ -146,7 +152,6 @@ export const saveStateToLocalStorage = () => (dispatch, getState) => {
 
 export const loadStateFromLocalStorage = () => (dispatch, getState) => {
   const state = JSON.parse(localStorage.getItem('state'))
-
   if (state) {
     dispatch({ type: LOAD_STATE_FROM_LOCAL_STORAGE, payload: state })
   } else {
