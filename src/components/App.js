@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import history from '../history'
 import { connect } from 'react-redux'
-import { setUIGameWidth } from '../actions'
+import { setUIGameWidth, loadStateFromLocalStorage } from '../actions'
 import Menu from './Menu'
 import Game from './Game'
 import NewGame from './NewGame'
@@ -12,11 +12,13 @@ import Graph from './Graph'
 class App extends React.Component {
   
   state = {menuEnabled: true}
+
   componentDidMount() {
     const width = document.body.offsetWidth
     this.setState({menuEnabled: true})
     this.props.setUIGameWidth(width)
     window.addEventListener('resize', this.onPageResize)
+    this.props.loadStateFromLocalStorage()
   }
 
   onPageResize = () => {
@@ -79,4 +81,4 @@ class App extends React.Component {
   } 
 }
 
-export default connect(null, {setUIGameWidth})(App)
+export default connect(null, {setUIGameWidth, loadStateFromLocalStorage})(App)
