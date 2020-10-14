@@ -3,7 +3,16 @@ import { connect } from 'react-redux'
 import { setPlayerName, setPlayerAnswer } from '../actions'
 
 class PlayerControl extends React.Component {
-  state = {name: `Игрок ${this.props.playerID + 1}`}
+  // state = {name: `Игрок ${this.props.playerID + 1}`}
+  // state = {name: this.props.players[this.props.playerID].name || `Игрок ${this.props.playerID + 1}`}
+
+  renderPlayerName = () => {
+    const { playerID, players } = this.props
+    if (players[playerID]) {
+      return players[playerID].name
+    }
+    return `Игрок ${playerID + 1}`
+  }
 
   renderNameInput = () => {
     return (
@@ -11,7 +20,7 @@ class PlayerControl extends React.Component {
           className="player-name" 
           size="10"
           type="text"
-          value={this.state.name}
+          value={this.renderPlayerName()}
           onChange={(e) => {
             e.preventDefault()
             this.setState({name: e.target.value})
