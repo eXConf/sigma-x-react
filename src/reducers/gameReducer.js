@@ -3,16 +3,20 @@ import {
   ADD_SUBJECT,
   RESET_SUBJECTS,
   SET_SUBJECT_NAMES,
+  SET_PACKAGE_TEXT,
   SET_CURRENT_QUESTION_NUM,
   SET_PLAYER_ANSWER,
   CREATE_PLAYER,
   SET_PLAYER_NAME,
-  SET_UI_GAME_WIDTH
+  SET_UI_GAME_WIDTH,
+  SAVE_STATE_TO_LOCAL_STORAGE,
+  LOAD_STATE_FROM_LOCAL_STORAGE
  } from '../actions/types'
 
 const INITITAL_STATE = {
   players: [],
   currentQuestionNum: 0,
+  packageText: '',
   subjects: ['Тема #1', 'Тема #2', 'Тема #3'],
   subjectNames: []
 }
@@ -39,6 +43,9 @@ export default (state = INITITAL_STATE, action) => {
     case ADD_SUBJECT:
       return {...state, subjects: payload}
 
+    case SET_PACKAGE_TEXT:
+      return {...state, packageText: payload}
+
     case RESET_SUBJECTS:
       return {
         ...state, 
@@ -50,7 +57,6 @@ export default (state = INITITAL_STATE, action) => {
 
     case SET_UI_GAME_WIDTH:
       return state
-      
     default: 
       return state
   }
