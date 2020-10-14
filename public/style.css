@@ -14,10 +14,11 @@ html {
   --subjects-height: 40vh;
   --control-block-height: 22vh;
 
-  --theme-green-main: rgb(96, 170, 96);
-  --theme-green-dark: rgb(75, 133, 75);
-  --theme-green-light: rgba(96, 170, 96, 0.5);
-  --theme-green-lighter: rgba(96, 170, 96, 0.25);
+  --theme-green-main: rgb(71, 71, 71);
+  --theme-green-dark: rgb(47, 47, 47);
+  --theme-green-darker: rgb(24, 24, 24);
+  --theme-green-light: rgb(204, 204, 204);
+  --theme-green-lighter: rgb(246, 246, 246);
 
   --highlight-active-color: rgb(216, 216, 216);
 }
@@ -36,6 +37,8 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
 
   width: 5rem;
   padding: 1rem 0.4rem;
@@ -69,7 +72,7 @@ html {
 }
 
 .menu-active {
-  background-color: green;
+  background-color: var(--theme-green-darker);
 }
 
 .main-container {
@@ -148,7 +151,7 @@ html {
 }
 
 .subject {
-  background-color: var(--theme-green-light);
+  background-color: var(--theme-green-dark);
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -250,8 +253,9 @@ html {
 }
 
 .nav-btn {
-  width: 4.2rem;
+  width: 5rem;
   height: 2.6rem;
+  margin: 0.4rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -271,14 +275,15 @@ html {
 
 .package {
   width: 100%;
-  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 2vh);
+  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 6vh);
   min-height: 7rem;
   resize: none;
   padding: 0;
   margin: 0;
   border: 0;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  overflow: hidden;
   border-right: 1px solid var(--theme-green-light);
   border-bottom: 1px solid var(--theme-green-light);
 }
