@@ -72,14 +72,14 @@ class NewGame extends React.Component {
                 <option value="100">100</option>
               </select>
             </div>
-            <div>
+            {/* <div>
               <input 
                 type="checkbox" 
                 onChange={(e) => this.setState({ resetSubjects: e.target.checked })}
                 id="reset-subjects"
               />
               <label htmlFor="reset-subjects"> TODO: Очистить названия тем</label>
-            </div>
+            </div> */}
             <button 
               type="submit" 
             >
