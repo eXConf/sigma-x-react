@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/sigma-x-react/static/js/main.592c7145.chunk.js",
-    "main.js.map": "/sigma-x-react/static/js/main.592c7145.chunk.js.map",
+    "main.js": "/sigma-x-react/static/js/main.233c4129.chunk.js",
+    "main.js.map": "/sigma-x-react/static/js/main.233c4129.chunk.js.map",
     "runtime-main.js": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js",
     "runtime-main.js.map": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js.map",
-    "static/js/2.297129bd.chunk.js": "/sigma-x-react/static/js/2.297129bd.chunk.js",
-    "static/js/2.297129bd.chunk.js.map": "/sigma-x-react/static/js/2.297129bd.chunk.js.map",
+    "static/js/2.1c8badd7.chunk.js": "/sigma-x-react/static/js/2.1c8badd7.chunk.js",
+    "static/js/2.1c8badd7.chunk.js.map": "/sigma-x-react/static/js/2.1c8badd7.chunk.js.map",
     "index.html": "/sigma-x-react/index.html",
-    "precache-manifest.0a01b8e60c7f9084cb3f8ffd3e5dbcdb.js": "/sigma-x-react/precache-manifest.0a01b8e60c7f9084cb3f8ffd3e5dbcdb.js",
+    "precache-manifest.9fc4728fcdf69a63ff2edd235f4907d4.js": "/sigma-x-react/precache-manifest.9fc4728fcdf69a63ff2edd235f4907d4.js",
     "service-worker.js": "/sigma-x-react/service-worker.js",
-    "static/js/2.297129bd.chunk.js.LICENSE.txt": "/sigma-x-react/static/js/2.297129bd.chunk.js.LICENSE.txt"
+    "static/js/2.1c8badd7.chunk.js.LICENSE.txt": "/sigma-x-react/static/js/2.1c8badd7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.36e6b1a0.js",
-    "static/js/2.297129bd.chunk.js",
-    "static/js/main.592c7145.chunk.js"
+    "static/js/2.1c8badd7.chunk.js",
+    "static/js/main.233c4129.chunk.js"
   ]
 }

@@ -277,6 +277,10 @@ html {
   color: var(--theme-text-light);
 }
 
+.nav-current {
+  width: 10rem;
+}
+
 .nav-btn:hover {
   background-color: var(--theme-dark);
 }
@@ -306,6 +310,7 @@ html {
 }
 
 .package-el {
+  padding: 0 .5rem;
   -webkit-touch-callout: none; 
     -webkit-user-select: none;
      -khtml-user-select: none;
