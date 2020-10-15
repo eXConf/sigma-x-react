@@ -130,7 +130,7 @@ export const setUIGameWidth = (width) => (dispatch, getState) => {
   }
   document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
   document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
-  dispatch({ type: SET_UI_GAME_WIDTH, payload: null})
+  dispatch({ type: SET_UI_GAME_WIDTH, payload: gameWidth})
 }
 
 let allowRecording = true
