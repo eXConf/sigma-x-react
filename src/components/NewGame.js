@@ -78,7 +78,7 @@ class NewGame extends React.Component {
                 onChange={(e) => this.setState({ resetSubjects: e.target.checked })}
                 id="reset-subjects"
               />
-              <label htmlFor="reset-subjects"> TODO: Очистить названия тем</label>
+              <label htmlFor="reset-subjects"> Очистить названия тем и текст пакета</label>
             </div>
             <button 
               type="submit" 
