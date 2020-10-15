@@ -27,9 +27,9 @@ export default (state = INITITAL_STATE, action) => {
   switch(action.type) {
     case RESET_GAME:
       return { ...INITITAL_STATE, 
-        subjects: [...state.subjects],
-        subjectNames: [...state.subjectNames],
-        packageText: state.packageText }
+        subjects: [...payload.subjects],
+        subjectNames: [...payload.subjectNames],
+        packageText: payload.packageText }
     
     case CREATE_PLAYER:
       return {...state, players: payload}

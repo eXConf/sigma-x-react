@@ -37,8 +37,16 @@ export const setPriceMultiplier = (multiplier) => {
 
 //#endregion
 
-export const resetGame = () => (dispatch) => {
-  dispatch ({ type: RESET_GAME, payload: '' })
+export const resetGame = ({resetPackage}) => (dispatch, getState) => {
+  const {game} = getState()
+  
+  if (resetPackage) {
+    game.subjects = ['Тема #1', 'Тема #2', 'Тема #3']
+    game.subjectNames = []
+    game.packageText = ""
+  }
+
+  dispatch ({ type: RESET_GAME, payload: game })
   history.push('/')
   dispatch( saveStateToLocalStorage() )
 }

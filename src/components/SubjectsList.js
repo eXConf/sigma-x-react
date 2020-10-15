@@ -37,10 +37,8 @@ class SubjectsList extends React.Component {
   onSubjectsListChange = (e) => {
     const subjects = e.target.value
     this.setState({ subjects })
-    if (subjects) {
-      const subjectsArray = subjects.split('\n')
-      this.props.setSubjectNames(subjectsArray)
-    }
+    const subjectsArray = subjects.split('\n')
+    this.props.setSubjectNames(subjectsArray)
   }
 
   onPackageTextChange = (e) => {
