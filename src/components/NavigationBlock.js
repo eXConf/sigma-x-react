@@ -64,10 +64,9 @@ class NavigationBlock extends React.Component {
             className="nav-btn nav-current"
             onClick={() => {
               const text = this.getCurrentText()
-              var userAgent = navigator.userAgent.toLowerCase();
-              if (userAgent.indexOf(' electron/') > -1) {
+              if (window.electron) {
                 // Electron-specific code
-                window.electron.sendToChatAPI.sendToChat(text)
+                window.electron.bridge.sendToChat(text)
               } else {
                 copyToClipboard(text)
               }
@@ -91,7 +90,9 @@ const mapStateToProps = (state) => {
     currentQuestionNum: state.game.currentQuestionNum,
     numberOfPlayers: state.settings.numberOfPlayers,
     numberOfQuestions: state.settings.numberOfQuestions,
-    numberOfSubjects: state.game.subjects.length
+    numberOfSubjects: state.game.subjects.length,
+    subjects: state.game.subjects,
+    priceMultiplier: state.settings.priceMultiplier
   })
 }
 
