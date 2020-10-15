@@ -14,8 +14,9 @@ class Graph extends React.Component {
                 labels: this.getLabels(),
                 datasets: this.getDatasets()
               }} 
-              width={600}
-              height={400}
+              width={this.props.uiWidth - 85}
+              redraw={true}
+              height={200}
               options={this.graphOptions}
               plugins={this.graphPlugins}
             />
@@ -30,6 +31,7 @@ class Graph extends React.Component {
             "#e6d779"]
 
   graphOptions = { 
+    maintainAspectRatio: true,
     scales: {
       yAxes: [{
         ticks: {
@@ -104,7 +106,8 @@ class Graph extends React.Component {
 const mapStateToProps = (state) => {
   return {
     players: state.game.players,
-    maxQuestions: state.game.subjects.length * state.settings.numberOfQuestions
+    maxQuestions: state.game.subjects.length * state.settings.numberOfQuestions,
+    uiWidth: state.settings.uiWidth
   }
 }
 
