@@ -2,14 +2,33 @@
   margin: 0;
 }
 
-:root {
-  --price-width: 50px;
-  --player-score-wdith: 120px;
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-  --theme-green-main: rgb(96, 170, 96);
-  --theme-green-dark: rgb(75, 133, 75);
-  --theme-green-light: rgba(96, 170, 96, 0.5);
-  --theme-green-lighter: rgba(96, 170, 96, 0.25);
+:root {
+  --game-width: 550px;
+  --player-score-width: 140px;
+  --subjects-height: 40vh;
+  --control-block-height: 22vh;
+
+  /* --theme-main: rgb(71, 71, 71);
+  --theme-dark: rgb(47, 47, 47);
+  --theme-darker: rgb(24, 24, 24);
+  --theme-light: rgb(170, 170, 170);
+  --theme-lighter: rgb(218, 218, 218); */
+
+  --theme-main: #424246;
+  --theme-dark: #bbb6b6;
+  --theme-darker: #747474;
+  --theme-light: #d4d9dd;
+  --theme-lighter: #f1f1f1;
+  --theme-bg: #fffdfd;
+  --theme-text-dark: rgb(20, 20, 20);
+  --theme-text-light:  #f1f1f1;
 
   --highlight-active-color: rgb(216, 216, 216);
 }
@@ -21,16 +40,18 @@
 }
 
 .menu-container {
-  background-color: var(--theme-green-main);
-  color: white;
+  background-color: var(--theme-main);
+  color: var(--theme-text-light);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
 
-  width: 45px;
-  padding: 10px 5px;
+  width: 5rem;
+  padding: 1rem 0.4rem;
 }
 
 .hide-menu-btn {
@@ -39,43 +60,55 @@
   background-color: rgba(1, 1, 1, 0);
   border: none;
   font-size: x-large;
-  color: white;
-  margin-bottom: 10px;
+  color: var(--theme-text-light);
+  margin-bottom: 0.7rem;
   outline: none;
   cursor: pointer;
 }
 
 .menu-item {
-  width:40px;
-  height: 40px;
-  margin-bottom: 10px;
-  background-color: var(--theme-green-dark);
-  color: white;
+  display: flex;
+  /* width: 100%; */
+  height: 2.6rem;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.2rem;
+  background-color: var(--theme-dark);
+  color: var(--theme-text-dark);
   border: none;
-  font-size: x-small;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-active {
+  background-color: var(--theme-darker);
 }
 
 .main-container {
-  background-color: rgb(250, 250, 250);
-  width: 100%;
+  /* background-color: rgb(158, 96, 96); */
+  background-color: var(--theme-bg);
+  width: var(--game-width);
+  height: 100vh;
   /* padding: 10px; */
 }
 
 .menu-switcher {
   position: absolute;
   /* margin-top: 2px; */
-  width: 30px;
-  height: 26px;
+  width: 1.9rem;
+  height: 1.6rem;
   text-align: center;
   font-size: larger;
-  color: white;
-  background: var(--theme-green-main);
+  color: var(--theme-text-light);
+  background: var(--theme-main);
   box-shadow: 0 0 6px rgba(0,0,0,0.7);
   cursor: pointer;
 }
 
 .menu-switcher:hover {
-  background: var(--theme-green-dark);
+  background: var(--theme-dark);
 }
 
 .menu-switcher i {
@@ -85,91 +118,101 @@
 
 .scrollable {
   width: 100%;
-  max-width: 500px;
+  max-width: var(--game-width);
   overflow-y: scroll;
-  height: 400px;
-  /* scrollbar-color: var(--theme-green-main); */
-  scrollbar-color: var(--theme-green-main) var(--theme-green-light);
+  height: var(--subjects-height);
+  /* scrollbar-color: var(--theme-main); */
+  scrollbar-color: var(--theme-main) var(--theme-light);
   scrollbar-width: thin;
 }
 
 .scrollable::-webkit-scrollbar {
-  width: 8px;               /* width of the entire scrollbar */
+  width: 0.7rem;               /* width of the entire scrollbar */
 }
 .scrollable::-webkit-scrollbar-track {
-  background: var(--theme-green-light);        /* color of the tracking area */
+  background: var(--theme-light);        /* color of the tracking area */
 }
 .scrollable::-webkit-scrollbar-thumb {
-  background-color: var(--theme-green-main);   /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid var(--theme-green-light);  /* creates padding around scroll thumb */
+  background-color: var(--theme-main);   /* color of the scroll thumb */
+  border-radius: 1.2rem;       /* roundness of the scroll thumb */
+  border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
 }
 
 .scores-block {
   width: 100%;
-  max-width: 500px;
+  max-width: var(--game-width);
+  height: var(--control-block-height);
   border-collapse: collapse;
   text-align: center;
-  border-right: 1px solid var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-light);
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
   /* background-color: rgb(56, 56, 56);
   color: white; */
 }
 
 .question:hover {
-  background-color: var(--theme-green-lighter);
+  background-color: var(--theme-light);
   cursor: pointer;
 }
 
 .question.active{
-  background-color: var(--theme-green-lighter);
-  border: 2px solid var(--theme-green-main);
+  background-color: var(--theme-lighter);
+  border: 2px solid var(--theme-main);
   
 }
 
 .subject {
-  background-color: var(--theme-green-light);
-  color: white;
-  font-size: larger;
+  background-color: var(--theme-dark);
+  color: var(--theme-text-dark);
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 5px;
+  padding: 0.3rem;
   cursor: default;
 }
 
 .price {
   font-weight: bold;
-  width: 40px;
-  background-color: var(--theme-green-light);
-  border-bottom: 1px solid var(--theme-green-lighter);
+  width: 2rem;
+  padding: 0.1rem 0;
+  background-color: var(--theme-light);
+  border-bottom: 1px solid var(--theme-lighter);
 }
 
 .player-score {
-  border-bottom: 1px solid var(--theme-green-lighter);
-  width: 120px;
+  border-bottom: 1px solid var(--theme-lighter);
+  width: var(--player-score-width);
 }
 
 .divider {
-  border-top: solid 10px var(--theme-green-light);
-  background-color: var(--theme-green-light);
+  border-top: solid 0.2rem var(--theme-dark);
+  background-color: var(--theme-light);
 }
 
 .sigma {
   font-weight: bold;
-  font-size: x-large;
-  width: 40px;
-  background-color: var(--theme-green-light);
+  font-size: 1.5rem;
+  width: 2rem;
+  background-color: var(--theme-light);
+}
+.sigma:hover {
+  cursor: pointer;
+  color: var(--theme-text-light);
+}
+.sigma:active {
+  color: var(--theme-text-dark);
 }
 
 .player-sum {
   font-weight: bold;
-  background-color: var(--theme-green-light);
-  width: 120px;
+  background-color: var(--theme-light);
+  width: var(--player-score-width);
+  padding: 0.3rem 0;
 }
 
 .controls-block {
   width: 100%;
-  height: 70px;
-  background-color: var(--theme-green-lighter);
+  height: 6.4rem;
+  background-color: var(--theme-lighter);
   text-align: center;
 }
 
@@ -185,32 +228,33 @@
 
 .player-name {
   text-align: center;
-  font-size: medium;
-  color: #555;
+  font-size: 1rem;
+  color: var(--theme-text-dark);
+  background-color: var(--theme-bg);
   border: none;
   width: 95%;
 }
 
 .player-button {
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 1.9rem;
   cursor: pointer;
   text-align: center;
-  font-size: x-large;
+  font-size: 1.5rem;
   border: none;
-  margin: 5px;
+  margin: 0.3rem;
 }
 
 .player-button {
-  color: var(--theme-green-main);
+  color: var(--theme-main);
 }
 
 .player-button:hover {
-  color: var(--theme-green-dark);
+  color: var(--theme-dark);
 }
 
 .player-button:active {
-  color: var(--theme-green-main);
+  color: var(--theme-main);
 }
 
 .navigation-block {
@@ -221,30 +265,156 @@
 }
 
 .nav-btn {
-  width: 70px;
-  height: 40px;
+  width: 5rem;
+  height: 2.6rem;
+  margin: 0.4rem;
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: var(--theme-green-main);
+  background-color: var(--theme-main);
   font-size: x-large;
   font-weight: bold;
-  color: rgb(241, 241, 241);
+  color: var(--theme-text-light);
 }
 
 .nav-btn:hover {
-  background-color: var(--theme-green-dark);
+  background-color: var(--theme-dark);
 }
 
 .nav-btn:active {
-  background-color: var(--theme-green-main);
+  background-color: var(--theme-main);
 }
 
 .package {
   width: 100%;
+  height: calc(100vh - var(--control-block-height) - var(--subjects-height) - 8vh);
+  min-height: 7rem;
   resize: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   border: 0;
   outline: none;
+  font-size: 1.4rem;
+  background-color: var(--theme-bg);
+  
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
+
+  overflow-y: scroll;
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
 }
+
+.package-el {
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.package-el:hover {
+  cursor: default;
+}
+
+.package-el.active {
+  background-color: var(--theme-lighter);
+}
+
+.package::-webkit-scrollbar {
+  width: 0.7rem;              /* width of the entire scrollbar */
+}
+.package::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.package::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
+}
+
+option {
+  display: block;
+  white-space: normal;
+  color: var(--theme-text-dark);
+}
+
+option:checked {
+  background: var(--theme-text-dark) linear-gradient(0deg, var(--theme-dark) 0%, var(--theme-dark) 100%);
+}
+
+.secondary-container {
+  display: flex;
+  width: var(--game-width);
+  background-color: var(--theme-bg);
+  color: var(--theme-text-dark);
+  /* align-items: center; */
+  padding: 1rem 0.5rem;
+  justify-content: center;
+  border-right: 1px solid var(--theme-light);
+  border-bottom: 1px solid var(--theme-light);
+}
+
+.new-game form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-game h2 {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.new-game form div {
+  padding: 0.1rem 0.3rem;
+  font-size: 1.2rem;
+}
+
+.new-game form button {
+  margin: 1rem auto;
+}
+
+.subjects-list, .graph {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subjects-list h2, .graph h2 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.subjects-list textarea {
+  display: block;
+  resize: none;
+  width: 90%;
+  height: 35vh;
+  min-height: 10rem;
+  font-size: 1.2rem;
+  overflow-y: scroll;
+  height: var(--subjects-height);
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
+}
+
+.subjects-list textarea::-webkit-scrollbar {
+width: 0.7rem;              /* width of the entire scrollbar */
+}
+.subjects-list textarea::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.subjects-list textarea::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
+}
+
+
+/* @media (max-width: 800px) and (orientation: portrait) {
+  html {
+    font-size: 12px;
+  }
+} */
