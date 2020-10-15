@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setCurrentQuestionNum, addSubject } from '../actions'
+import { copyToClipboard } from './helpers'
 
 class NavigationBlock extends React.Component {
 
@@ -41,6 +42,15 @@ class NavigationBlock extends React.Component {
     return `${subjectNum}.${questionNum}`
   }
 
+  getCurrentText = () => {
+    let { subjects, currentQuestionNum, numberOfQuestions, priceMultiplier } = this.props
+    let currentSubjectNum = Math.floor(currentQuestionNum / numberOfQuestions)
+    let currentSubjectName = subjects[currentSubjectNum]
+    let currentPrice = ((currentQuestionNum % numberOfQuestions) + 1) * priceMultiplier
+
+    return `Тема #${currentSubjectNum + 1}: ${currentSubjectName}, вопрос за ${currentPrice}`
+  }
+
   render() {
     return (
       <tr>
@@ -50,7 +60,19 @@ class NavigationBlock extends React.Component {
               onClick={() => this.onPrevClicked()} 
               className="nav-btn nav-prev"
             ><i className="fas fa-chevron-left"></i></button>
-            <button className="nav-btn nav-current">
+            <button 
+            className="nav-btn nav-current"
+            onClick={() => {
+              const text = this.getCurrentText()
+              var userAgent = navigator.userAgent.toLowerCase();
+              if (userAgent.indexOf(' electron/') > -1) {
+                // Electron-specific code
+                window.electron.sendToChatAPI.sendToChat(text)
+              } else {
+                copyToClipboard(text)
+              }
+            }}
+            >
               {this.getCurrentNav()}
             </button>
             <button 
