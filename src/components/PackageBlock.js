@@ -2,13 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 class PackageBlock extends React.Component {
+  state = {active: 0}
 
   render() {
     return (
       <div className="package-container">
-        <select multiple className="package">
+        <div className="package">
           {this.renderPackageText()}
-        </select>
+        </div>
       </div>
     )
   }
@@ -19,8 +20,11 @@ class PackageBlock extends React.Component {
       if (el && el !== '\r' && el !== ' ') {
         return (
           <React.Fragment key={`package-text-${index}`}>
-            <option>{el}</option>
-            <option></option>
+            <div 
+              className={`package-el ${index === this.state.active ? 'active' : ''}`} 
+              onClick={() => this.setState({active: index})}
+            >{el}</div>
+            <div className="package-el">&nbsp;</div>
           </React.Fragment>
         )
       }
