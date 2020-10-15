@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { copyToClipboard } from './helpers'
 
 class SummaryBlock extends React.Component {
 
@@ -40,19 +41,6 @@ class SummaryBlock extends React.Component {
     });
     return allResults
   }
-
-  copyResultsToClipboard = () => {
-    const results = this.getAllPlayersResults().join('\r\n')
-    let dummy = document.createElement('textarea')
-    document.body.appendChild(dummy)
-    dummy.setAttribute('id', 'dummy')
-    document.getElementById('dummy').value = results
-    dummy.select()
-    dummy.setSelectionRange(0, 99999)
-    document.execCommand("copy")
-    document.body.removeChild(dummy)
-  }
-
   
   renderPlayerSum = () => {
     return [...Array(this.props.numberOfPlayers)].map(
@@ -76,7 +64,10 @@ class SummaryBlock extends React.Component {
           <td 
             className="sigma"
             title="Кликните, чтобы скопировать счёт в буфер обмена"
-            onClick={() => this.copyResultsToClipboard()}
+            onClick={() => {
+              const text = this.getAllPlayersResults().join('\r\n')
+              copyToClipboard(text)
+            }}
           >Σ</td>
           {this.renderPlayerSum()}
         </tr> 
