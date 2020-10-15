@@ -277,6 +277,10 @@ html {
   color: var(--theme-text-light);
 }
 
+.nav-current {
+  width: 10rem;
+}
+
 .nav-btn:hover {
   background-color: var(--theme-dark);
 }
