@@ -1,7 +1,7 @@
 {
   "homepage": "http://exconf.github.io/sigma-x-react",
   "name": "sigma-x-react",
-  "version": "0.1.0",
+  "version": "2.0.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
