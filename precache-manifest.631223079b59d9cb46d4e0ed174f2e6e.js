@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f647f56f6f1d9e92de15066630a27918",
+    "revision": "9f52ff1aa75e0a6ead7f1f9209202ff1",
     "url": "/sigma-x-react/index.html"
   },
   {
