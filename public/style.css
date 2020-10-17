@@ -399,7 +399,7 @@ option:checked {
   height: 35vh;
   min-height: 10rem;
   font-size: 1.2rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: var(--theme-main) var(--theme-light);
   scrollbar-width: thin;
 }
