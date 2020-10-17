@@ -6,6 +6,7 @@ html {
   font-size: 14px;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-color: #222222;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -119,7 +120,7 @@ html {
 .scrollable {
   width: 100%;
   max-width: var(--game-width);
-  overflow-y: scroll;
+  overflow-y: auto;
   height: var(--subjects-height);
   /* scrollbar-color: var(--theme-main); */
   scrollbar-color: var(--theme-main) var(--theme-light);
@@ -309,7 +310,8 @@ html {
   border-right: 1px solid var(--theme-light);
   border-bottom: 1px solid var(--theme-light);
 
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-color: var(--theme-main) var(--theme-light);
   scrollbar-width: thin;
 }
