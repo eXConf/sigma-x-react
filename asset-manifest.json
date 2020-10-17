@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/sigma-x-react/static/js/main.e1e9871d.chunk.js",
-    "main.js.map": "/sigma-x-react/static/js/main.e1e9871d.chunk.js.map",
+    "main.js": "/sigma-x-react/static/js/main.5f568f80.chunk.js",
+    "main.js.map": "/sigma-x-react/static/js/main.5f568f80.chunk.js.map",
     "runtime-main.js": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js",
     "runtime-main.js.map": "/sigma-x-react/static/js/runtime-main.36e6b1a0.js.map",
     "static/js/2.1c8badd7.chunk.js": "/sigma-x-react/static/js/2.1c8badd7.chunk.js",
     "static/js/2.1c8badd7.chunk.js.map": "/sigma-x-react/static/js/2.1c8badd7.chunk.js.map",
     "index.html": "/sigma-x-react/index.html",
-    "precache-manifest.ec0f8464371bdd457e191084570eb5f9.js": "/sigma-x-react/precache-manifest.ec0f8464371bdd457e191084570eb5f9.js",
+    "precache-manifest.f144eb495e9a0555a50e28214f58eb99.js": "/sigma-x-react/precache-manifest.f144eb495e9a0555a50e28214f58eb99.js",
     "service-worker.js": "/sigma-x-react/service-worker.js",
     "static/js/2.1c8badd7.chunk.js.LICENSE.txt": "/sigma-x-react/static/js/2.1c8badd7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.36e6b1a0.js",
     "static/js/2.1c8badd7.chunk.js",
-    "static/js/main.e1e9871d.chunk.js"
+    "static/js/main.5f568f80.chunk.js"
   ]
 }
