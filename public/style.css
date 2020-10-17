@@ -351,12 +351,14 @@ option:checked {
 
 .secondary-container {
   display: flex;
+  flex-direction: column;
   width: var(--game-width);
   background-color: var(--theme-bg);
   color: var(--theme-text-dark);
   /* align-items: center; */
   padding: 1rem 0.5rem;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
   border-right: 1px solid var(--theme-light);
   border-bottom: 1px solid var(--theme-light);
 }
@@ -366,7 +368,7 @@ option:checked {
   flex-direction: column;
 }
 
-.new-game h2 {
+.new-game h2, .secondary-container h2 {
   margin: 0 auto;
   margin-bottom: 1rem;
 }
@@ -476,6 +478,53 @@ border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb
   margin: 0.5rem 0.8rem;
   list-style-type: square;
   list-style-position: inside;
+}
+
+.themes {
+  height: 80vh;
+  padding-right: 0.3rem;
+  overflow-y: auto;
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
+}
+
+.themes::-webkit-scrollbar {
+width: 0.7rem;              /* width of the entire scrollbar */
+}
+.themes::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.themes::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
+}
+
+.theme {
+  border: 1px solid rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+}
+
+.theme.active {
+  background-color: rgba(0,0,0,0.75);
+}
+
+.theme.active .theme-name {
+  font-weight: bold;
+  color: #fff;
+}
+
+.theme-name {
+  font-size: 1.3rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.theme-colors {
+  height: 3rem;
+  width: calc(var(--game-width) / 1.2);
+  border: 1px solid rgba(0,0,0,0.5);
 }
 
 /* @media (max-width: 800px) and (orientation: portrait) {
