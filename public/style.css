@@ -400,7 +400,6 @@ option:checked {
   min-height: 10rem;
   font-size: 1.2rem;
   overflow-y: scroll;
-  height: var(--subjects-height);
   scrollbar-color: var(--theme-main) var(--theme-light);
   scrollbar-width: thin;
 }
@@ -417,6 +416,56 @@ border-radius: 1.2rem;       /* roundness of the scroll thumb */
 border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
 }
 
+.about {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.links div {
+  padding: 0.2rem 0.3rem;
+}
+
+.advices {
+  height: 70vh;
+  overflow-y: auto;
+  scrollbar-color: var(--theme-main) var(--theme-light);
+  scrollbar-width: thin;
+}
+
+.advices::-webkit-scrollbar {
+width: 0.7rem;              /* width of the entire scrollbar */
+}
+.advices::-webkit-scrollbar-track {
+background: var(--theme-light);        /* color of the tracking area */
+}
+.advices::-webkit-scrollbar-thumb {
+background-color: var(--theme-main);   /* color of the scroll thumb */
+border-radius: 1.2rem;       /* roundness of the scroll thumb */
+border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb */
+}
+
+.about h2, h3, h4 {
+  margin-bottom: 0.5rem;
+}
+
+.about ul {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.about ul li {
+  margin: 0.5rem 0.8rem;
+  list-style-type: square;
+  list-style-position: inside;
+}
 
 /* @media (max-width: 800px) and (orientation: portrait) {
   html {

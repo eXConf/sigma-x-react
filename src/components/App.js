@@ -8,6 +8,7 @@ import Game from './Game'
 import NewGame from './NewGame'
 import SubjectsList from './SubjectsList'
 import Graph from './Graph'
+import About from './About'
 
 class App extends React.Component {
   
@@ -72,7 +73,7 @@ class App extends React.Component {
               
             </Route>
             <Route path="/about">
-              
+              <About />
             </Route>
           </Switch>
         </Router>
