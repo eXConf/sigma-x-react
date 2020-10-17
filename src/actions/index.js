@@ -144,6 +144,7 @@ export const setUIGameWidth = (width) => (dispatch, getState) => {
 }
 
 export const setTheme = (id) => (dispatch, getState) => {
+  id = id || getState().settings.activeTheme
   const colors = getState().settings.themes[id].colors
   const keys = [
     '--theme-main',
@@ -159,7 +160,7 @@ export const setTheme = (id) => (dispatch, getState) => {
     document.documentElement.style.setProperty(keys[index], color)
   })
   dispatch({ type: SET_THEME, payload: id })
-  dispatch({ type: SAVE_STATE_TO_LOCAL_STORAGE, payload: null })
+  dispatch(saveStateToLocalStorage())
 }
 
 let allowRecording = true
@@ -175,7 +176,6 @@ export const saveStateToLocalStorage = () => (dispatch, getState) => {
     }, 1000);
 
   }
-  
   dispatch({ type: SAVE_STATE_TO_LOCAL_STORAGE, payload: null })
 }
 

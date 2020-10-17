@@ -3,7 +3,9 @@ import {
   SET_QUESTIONS_NUMBER,
   SET_PRICE_MULTIPLIER,
   SET_UI_GAME_WIDTH,
-  SET_THEME
+  SET_THEME,
+  SAVE_STATE_TO_LOCAL_STORAGE,
+  LOAD_STATE_FROM_LOCAL_STORAGE
  } from '../actions/types'
 
 const INITITAL_STATE = {
@@ -61,6 +63,12 @@ export default (state = INITITAL_STATE, action) => {
 
     case SET_THEME:
       return ({...state, activeTheme: payload })
+
+    case SAVE_STATE_TO_LOCAL_STORAGE:
+      return state
+
+    case LOAD_STATE_FROM_LOCAL_STORAGE:
+      return ({...payload.settings})
     default: 
       return state
   }
