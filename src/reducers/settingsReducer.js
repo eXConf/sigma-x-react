@@ -2,7 +2,8 @@ import {
   SET_PLAYERS_NUMBER,
   SET_QUESTIONS_NUMBER,
   SET_PRICE_MULTIPLIER,
-  SET_UI_GAME_WIDTH
+  SET_UI_GAME_WIDTH,
+  SET_THEME
  } from '../actions/types'
 
 const INITITAL_STATE = {
@@ -55,6 +56,9 @@ export default (state = INITITAL_STATE, action) => {
 
     case SET_UI_GAME_WIDTH:
       return ({...state, uiWidth: action.payload})
+
+    case SET_THEME:
+      return ({...state, activeTheme: action.payload })
     default: 
       return state
   }

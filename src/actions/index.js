@@ -18,6 +18,8 @@ import {
 
   SET_UI_GAME_WIDTH,
 
+  SET_THEME,
+
   SAVE_STATE_TO_LOCAL_STORAGE,
   LOAD_STATE_FROM_LOCAL_STORAGE
 } from './types'
@@ -139,6 +141,11 @@ export const setUIGameWidth = (width) => (dispatch, getState) => {
   document.documentElement.style.setProperty('--game-width', `${gameWidth}px`)
   document.documentElement.style.setProperty('--player-score-width', `${playerScoreWidth}px`)
   dispatch({ type: SET_UI_GAME_WIDTH, payload: gameWidth})
+}
+
+export const setTheme = (id) => (dispatch) => {
+  dispatch({ type: SET_THEME, payload: id })
+  dispatch({ type: SAVE_STATE_TO_LOCAL_STORAGE, payload: null })
 }
 
 let allowRecording = true
