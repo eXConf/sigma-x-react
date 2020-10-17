@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e48e1e939075d25f6e9115e101e3a53",
+    "revision": "3ecc1c8e15539bdb739dcf1e8624c6e7",
     "url": "/sigma-x-react/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sigma-x-react/static/js/2.1c8badd7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "16f9c7d150d90ea6f6cb",
-    "url": "/sigma-x-react/static/js/main.5f568f80.chunk.js"
+    "revision": "8daed0292e2c6827088d",
+    "url": "/sigma-x-react/static/js/main.40611d07.chunk.js"
   },
   {
     "revision": "8c9bf7259d9c1ccd7e29",
