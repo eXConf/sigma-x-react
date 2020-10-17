@@ -34,7 +34,7 @@ const INITITAL_STATE = {
     },
     {
       name: 'Burgundy-pink',
-      colors: ['#8c323d', '#40151f', '#6e0700', '#9f303a', '#cd7483', '#f8f8f8', '#ffcece', '#f1f1f1']
+      colors: ['#8c323d', '#40151f', '#6e0700', '#d45863', '#cd7483', '#f8f8f8', '#ffcece', '#f1f1f1']
     },
     {
       name: 'Gray-blue',
@@ -68,7 +68,7 @@ export default (state = INITITAL_STATE, action) => {
       return state
 
     case LOAD_STATE_FROM_LOCAL_STORAGE:
-      return ({...payload.settings})
+      return ({...state, ...payload.settings})
     default: 
       return state
   }
