@@ -430,6 +430,17 @@ border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb
 
 .links div {
   padding: 0.2rem 0.3rem;
+  color: var(--theme-darker);
+}
+
+.links a, .links a:visited {
+  font-weight: bold;
+  color: var(--theme-darker);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--theme-main);
 }
 
 .advices {

@@ -8,9 +8,11 @@ class About extends React.Component {
           <h2>SIGMA X v2</h2>
           <h4>Svoya Igra Game Manager Application by ExConfessor</h4>
           <div className="links">
-            <div><a href="https://exconf.github.io/sigma-x-react/">Браузерная версия</a></div>
-            <div><a href="https://github.com/eXConf/sigma-x-2/releases/">Десктопная версия</a></div>
-            <div><a href="https://donatepay.ru/don/DomovinaOpen">Помочь автору</a></div>
+            <div><a href="https://exconf.github.io/sigma-x-react/" target="_blank">Браузерная версия</a></div>
+            <div> | </div>
+            <div><a href="https://github.com/eXConf/sigma-x-2/releases/" target="_blank"> Десктопная версия</a></div>
+            <div> | </div>
+            <div><a href="https://donatepay.ru/don/DomovinaOpen" target="_blank">Помочь автору</a></div>
           </div>
           <h3>Советы</h3>
           <div className="advices">
