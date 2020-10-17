@@ -46,19 +46,21 @@ const INITITAL_STATE = {
 }
 
 export default (state = INITITAL_STATE, action) => {
+  const { payload } = action
+
   switch(action.type) {
     case SET_PLAYERS_NUMBER:
-      return ({...state, numberOfPlayers: action.payload})
+      return ({...state, numberOfPlayers: payload})
     case SET_QUESTIONS_NUMBER:
-      return ({...state, numberOfQuestions: action.payload})
+      return ({...state, numberOfQuestions: payload})
     case SET_PRICE_MULTIPLIER:
-      return ({...state, priceMultiplier: action.payload})
+      return ({...state, priceMultiplier: payload})
 
     case SET_UI_GAME_WIDTH:
-      return ({...state, uiWidth: action.payload})
+      return ({...state, uiWidth: payload})
 
     case SET_THEME:
-      return ({...state, activeTheme: action.payload })
+      return ({...state, activeTheme: payload })
     default: 
       return state
   }
