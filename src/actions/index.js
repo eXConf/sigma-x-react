@@ -144,7 +144,9 @@ export const setUIGameWidth = (width) => (dispatch, getState) => {
 }
 
 export const setTheme = (id) => (dispatch, getState) => {
-  id = id || getState().settings.activeTheme
+  if (id === undefined) {
+    id = getState().settings.activeTheme
+  }
   const colors = getState().settings.themes[id].colors
   const keys = [
     '--theme-main',
