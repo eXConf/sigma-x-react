@@ -9,6 +9,7 @@ import NewGame from './NewGame'
 import SubjectsList from './SubjectsList'
 import Graph from './Graph'
 import About from './About'
+import Themes from './Themes'
 
 class App extends React.Component {
   
@@ -70,7 +71,7 @@ class App extends React.Component {
               <Graph />
             </Route>
             <Route path="/theme">
-              
+              <Themes />
             </Route>
             <Route path="/about">
               <About />
