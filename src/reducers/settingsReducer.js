@@ -34,7 +34,7 @@ const INITITAL_STATE = {
     },
     {
       name: 'Burgundy-pink',
-      colors: ['#8c323d', '#40151f', '#6e0700', '#d45863', '#cd7483', '#f8f8f8', '#ffcece', '#f1f1f1']
+      colors: ['#8c323d', '#40151f', '#6e0700', '#803138', '#cd7483', '#f8f8f8', '#ff7171', '#f1f1f1']
     },
     {
       name: 'Gray-blue',
