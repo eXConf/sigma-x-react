@@ -34,7 +34,7 @@ const INITITAL_STATE = {
     },
     {
       name: 'Burgundy-pink',
-      colors: ['#8c323d', '#40151f', '#6e0700', '#803138', '#cd7483', '#f8f8f8', '#ff7171', '#f1f1f1']
+      colors: ['#8c323d', '#40151f', '#6e0700', '#803138', '#b0354a', '#f8f8f8', '#ff7171', '#f1f1f1']
     },
     {
       name: 'Gray-blue',
@@ -43,6 +43,10 @@ const INITITAL_STATE = {
     {
       name: 'Huckleberry',
       colors: ['#2c3953', '#7891c7', '#8393ff', '#889edb', '#657db2', '#e7f1ff', '#0d0d0d', '#f1f1f1']
+    },
+    {
+      name: 'Dark-gray',
+      colors: ['#333333', '#4a4a4a', '#929292', '#292929', '#565656', '#212224', '#dddddd', '#f1f1f1']
     }
   ]
 }

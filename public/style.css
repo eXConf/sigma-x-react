@@ -183,6 +183,7 @@ html {
 .player-score {
   border-bottom: 1px solid var(--theme-lighter);
   width: var(--player-score-width);
+  color: var(--theme-text-dark)
 }
 
 .divider {
@@ -194,6 +195,7 @@ html {
   font-weight: bold;
   font-size: 1.5rem;
   width: 2rem;
+  color: var(--theme-text-dark);
   background-color: var(--theme-light);
 }
 .sigma:hover {
@@ -206,6 +208,7 @@ html {
 
 .player-sum {
   font-weight: bold;
+  color: var(--theme-text-dark);
   background-color: var(--theme-light);
   width: var(--player-score-width);
   padding: 0.3rem 0;
@@ -251,10 +254,6 @@ html {
   color: var(--theme-main);
 }
 
-.player-button:hover {
-  color: var(--theme-dark);
-}
-
 .player-button:active {
   color: var(--theme-main);
 }
@@ -287,6 +286,9 @@ html {
   .nav-btn:hover {
     background-color: var(--theme-dark);
   }
+  .player-button:hover {
+    color: var(--theme-dark);
+  }
 }
 
 
@@ -317,7 +319,8 @@ html {
 }
 
 .package-el {
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
+  color: var(--theme-text-dark);
   -webkit-touch-callout: none; 
     -webkit-user-select: none;
      -khtml-user-select: none;
