@@ -3,6 +3,14 @@ import { connect } from 'react-redux'
 import PlayerControl from './PlayerControl'
 
 class ControlsBlock extends React.Component {
+  render() {
+    return (
+      <tr className="controls-block">
+        <td></td>
+        {this.renderPlayerControls()}
+      </tr>
+    )
+  }
 
   renderPlayerControls = () => {
     return [...Array(this.props.numberOfPlayers)].map(
@@ -11,15 +19,6 @@ class ControlsBlock extends React.Component {
           <td key={`pc-${index}`}><PlayerControl playerID={index} /></td>
         )
       }
-    )
-  }
-
-  render() {
-    return (
-      <tr className="controls-block">
-        <td></td>
-        {this.renderPlayerControls()}
-      </tr>
     )
   }
 }
