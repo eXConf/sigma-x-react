@@ -5,6 +5,18 @@ import Price from './Price'
 
 class Question extends React.Component {
 
+  render() {
+    return (
+      <tr 
+        onClick={() => this.onClick()}
+        className={`question ${this.isActive()} q${this.props.id}`}
+      >
+        <Price price={this.props.price} />
+        {this.renderPlayerScoreCell()}
+      </tr>
+    )
+  }
+
   renderPlayerScoreCell = () => {
     const { id, numberOfPlayers } = this.props
     return [...Array(numberOfPlayers)].map(
@@ -38,18 +50,6 @@ class Question extends React.Component {
 
   onClick = () => {
     this.props.setCurrentQuestionNum(this.props.id)
-  }
-
-  render() {
-    return (
-      <tr 
-        onClick={() => this.onClick()}
-        className={`question ${this.isActive()} q${this.props.id}`}
-      >
-        <Price price={this.props.price} />
-        {this.renderPlayerScoreCell()}
-      </tr>
-    )
   }
 }
 
