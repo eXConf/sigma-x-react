@@ -19,6 +19,7 @@ import {
   SET_UI_GAME_WIDTH,
 
   SET_THEME,
+  SET_USER_COLOR,
 
   SAVE_STATE_TO_LOCAL_STORAGE,
   LOAD_STATE_FROM_LOCAL_STORAGE
@@ -163,6 +164,14 @@ export const setTheme = (id) => (dispatch, getState) => {
   })
   dispatch({ type: SET_THEME, payload: id })
   dispatch(saveStateToLocalStorage())
+}
+
+export const setUserColor = ({index, color}) => (dispatch, getState) => {
+  const themes = getState().settings.themes
+  themes[0].colors[index] = color
+
+  dispatch({ type: SET_USER_COLOR, payload: themes })
+  dispatch(setTheme(0))
 }
 
 let allowRecording = true

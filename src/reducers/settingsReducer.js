@@ -1,9 +1,11 @@
+import { setUserColor } from '../actions'
 import { 
   SET_PLAYERS_NUMBER,
   SET_QUESTIONS_NUMBER,
   SET_PRICE_MULTIPLIER,
   SET_UI_GAME_WIDTH,
   SET_THEME,
+  SET_USER_COLOR,
   SAVE_STATE_TO_LOCAL_STORAGE,
   LOAD_STATE_FROM_LOCAL_STORAGE
  } from '../actions/types'
@@ -67,6 +69,9 @@ export default (state = INITITAL_STATE, action) => {
 
     case SET_THEME:
       return ({...state, activeTheme: payload })
+    
+    case SET_USER_COLOR:
+      return ({...state, themes: [...payload]})
 
     case SAVE_STATE_TO_LOCAL_STORAGE:
       return state

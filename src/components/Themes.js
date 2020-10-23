@@ -1,14 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setTheme } from '../actions'
+import { setTheme, setUserColor } from '../actions'
+import { ChromePicker } from 'react-color'
 
 class Themes extends React.Component {
+  state = {activeColorPickerNum: 0}
+  
   render() {
     return(
       <div className="secondary-container">
         <h2>Темы оформления</h2>
         <div className="themes">
           {this.renderThemes()}
+          <div className="user-theme-text">
+            Ниже вы можете задать цвета пользовательской темы (кликните по цвету, который хотите поменять, затем выберите новый в палитре):
+          </div>
+          <div className="user-colors">
+            {this.renderUserThemeControl()}
+          </div>
+          <div>
+              {this.renderColorPicker()}
+            </div>
         </div>
       </div>
     )
@@ -41,6 +53,43 @@ class Themes extends React.Component {
       )
     })
   }
+
+  renderUserThemeControl = () => {
+    const colors = this.props.themes[0].colors
+    return (
+      [...Array(colors.length)].map((el, index) => {
+        return (
+          <div 
+            key={index} 
+            className="user-color" 
+            style={{backgroundColor: colors[index]}}
+            onClick={() => {
+              if (this.state.activeColorPickerNum !== index) {
+                this.setState({activeColorPickerNum: index})
+              } else {
+                this.setState({activeColorPickerNum: -1})
+              }
+            }}
+          >
+          </div>
+        )
+      })
+    )
+  }
+
+  renderColorPicker = () => {
+    const index = this.state.activeColorPickerNum
+    if (index !== -1) {
+      return (
+        <div>
+          <ChromePicker 
+            color={this.props.themes[0].colors[index]}
+            onChangeComplete={(e) => this.props.setUserColor({index, color: e.hex})}
+          />
+        </div>
+      )
+    }
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -50,4 +99,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {setTheme})(Themes)
+export default connect(mapStateToProps, {setTheme, setUserColor})(Themes)

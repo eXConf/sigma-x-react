@@ -545,6 +545,27 @@ border: 0.2rem solid var(--theme-light);  /* creates padding around scroll thumb
   border: 1px solid rgba(0,0,0,0.5);
 }
 
+.user-theme-text {
+  font-size: 1.4rem;
+  width: calc(var(--game-width) - 9rem);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.user-colors {
+  display: flex;
+  flex-direction: row;
+  width: calc(var(--game-width) - 9rem);
+  font-size: 1.3rem;
+  margin: 0.8rem;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+
+.user-color {
+  width: 100%;
+  height: 3rem;
+}
+
 /* @media (max-width: 800px) and (orientation: portrait) {
   html {
     font-size: 12px;
