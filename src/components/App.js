@@ -17,34 +17,10 @@ class App extends React.Component {
 
   componentDidMount() {
     const width = document.body.offsetWidth
-    this.setState({menuEnabled: true})
     this.props.setUIGameWidth(width)
     window.addEventListener('resize', this.onPageResize)
     this.props.loadStateFromLocalStorage()
     this.props.setTheme()
-  }
-
-  onPageResize = () => {
-    this.props.setUIGameWidth(document.body.offsetWidth)
-  }
-
-  switchMenuState = () => {
-    this.setState({menuEnabled: !this.state.menuEnabled})
-  }
-
-  renderMenuSwitcher = () => {
-    if (!this.state.menuEnabled) {
-      return (
-        <div 
-         className="menu-switcher"
-         onClick={() => {
-           this.switchMenuState()
-         }}
-        >
-          <i className="fas fa-chevron-right"></i>
-        </div>
-      )
-    }
   }
 
   render(){
@@ -81,7 +57,29 @@ class App extends React.Component {
         </Router>
       </div>
     )
-  } 
+  }
+
+  renderMenuSwitcher = () => {
+    if (!this.state.menuEnabled) {
+      return (
+        <div 
+          className="menu-switcher"
+          onClick={() => this.switchMenuState()}
+        >
+          <i className="fas fa-chevron-right"></i>
+        </div>
+      )
+    }
+  }
+
+  onPageResize = () => {
+    this.props.setUIGameWidth(document.body.offsetWidth)
+  }
+
+  switchMenuState = () => {
+    this.setState({menuEnabled: !this.state.menuEnabled})
+  }
+
 }
 
 export default connect(null, {setUIGameWidth, loadStateFromLocalStorage, setTheme})(App)

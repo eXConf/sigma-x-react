@@ -5,16 +5,13 @@ import Question from './Question'
 
 class SubjectBlock extends React.Component {
 
-  renderQuestions = () => {
-    const {subjectID, numberOfQuestions, priceMultiplier} = this.props
-    return [...Array(this.props.numberOfQuestions)].map(
-      (el, index) => {
-        const questionID = subjectID * numberOfQuestions + index
-        const price = (index + 1) * priceMultiplier
-        return (
-          <Question key={questionID} id={questionID} price={price}/>
-        )
-      }
+  render() {
+    return (
+      <React.Fragment>
+        {this.renderSubject()}
+        {this.renderQuestions()}
+      </React.Fragment>
+      
     )
   }
 
@@ -27,13 +24,16 @@ class SubjectBlock extends React.Component {
     )
   }
 
-  render() {
-    return (
-      <React.Fragment>
-        {this.renderSubject()}
-        {this.renderQuestions()}
-      </React.Fragment>
-      
+  renderQuestions = () => {
+    const {subjectID, numberOfQuestions, priceMultiplier} = this.props
+    return [...Array(this.props.numberOfQuestions)].map(
+      (el, index) => {
+        const questionID = subjectID * numberOfQuestions + index
+        const price = (index + 1) * priceMultiplier
+        return (
+          <Question key={questionID} id={questionID} price={price}/>
+        )
+      }
     )
   }
 }

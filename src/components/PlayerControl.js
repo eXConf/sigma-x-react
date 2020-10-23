@@ -3,15 +3,34 @@ import { connect } from 'react-redux'
 import { setPlayerName, setPlayerAnswer } from '../actions'
 
 class PlayerControl extends React.Component {
-  // state = {name: `Игрок ${this.props.playerID + 1}`}
-  // state = {name: this.props.players[this.props.playerID].name || `Игрок ${this.props.playerID + 1}`}
 
-  renderPlayerName = () => {
-    const { playerID, players } = this.props
-    if (players[playerID]) {
-      return players[playerID].name
-    }
-    return `Игрок ${playerID + 1}`
+  render() {
+    return (
+      <div className="player-control">
+        {this.renderPlayerScoreButton('plus')}
+        {this.renderNameInput()}
+        {this.renderPlayerScoreButton('minus')}
+      </div>
+    )
+  }
+
+  renderPlayerScoreButton = (sign) => {
+    return (
+      <div 
+        className={`player-button ${sign}`}
+        onClick={() => {
+          const currentPrice = (this.props.currentQuestionNum % 
+            this.props.numberOfQuestions + 1) * this.props.priceMultiplier
+          this.props.setPlayerAnswer({
+            playerID: this.props.playerID,
+            questionID: this.props.currentQuestionNum,
+            score: sign === 'plus' ? currentPrice : -currentPrice
+          })
+        }}
+      >
+        <i className={`fas fa-${sign}-square`}></i>
+      </div>
+    )
   }
 
   renderNameInput = () => {
@@ -37,33 +56,12 @@ class PlayerControl extends React.Component {
     )
   }
 
-  renderPlayerScoreButton = (sign) => {
-    return (
-      <div 
-        className={`player-button ${sign}`}
-        onClick={() => {
-          const currentPrice = (this.props.currentQuestionNum % 
-            this.props.numberOfQuestions + 1) * this.props.priceMultiplier
-          this.props.setPlayerAnswer({
-            playerID: this.props.playerID,
-            questionID: this.props.currentQuestionNum,
-            score: sign === 'plus' ? currentPrice : -currentPrice
-          })
-        }}
-      >
-        <i className={`fas fa-${sign}-square`}></i>
-      </div>
-    )
-  }
-
-  render() {
-    return (
-      <div className="player-control">
-        {this.renderPlayerScoreButton('plus')}
-        {this.renderNameInput()}
-        {this.renderPlayerScoreButton('minus')}
-      </div>
-    )
+  renderPlayerName = () => {
+    const { playerID, players } = this.props
+    if (players[playerID]) {
+      return players[playerID].name
+    }
+    return `Игрок ${playerID + 1}`
   }
 }
 

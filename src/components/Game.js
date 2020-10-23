@@ -16,20 +16,6 @@ class Game extends React.Component {
     }
   }
 
-  renderSubjectBlocks = () => {
-    return this.props.subjects.map((subject, index) => {
-      return (
-        <SubjectBlock 
-          subjectName={subject}
-          key={index}
-          subjectID={index}
-        />
-      )
-    })
-  }
-
-
-  
   render() {
     return (
       <React.Fragment>
@@ -46,14 +32,25 @@ class Game extends React.Component {
               <SummaryBlock />
               <ControlsBlock />
               <NavigationBlock />
-              
             </tbody>
           </table>
           <PackageBlock />
         </div>
       </React.Fragment>
     )
-  } 
+  }
+
+  renderSubjectBlocks = () => {
+    return this.props.subjects.map((subject, index) => {
+      return (
+        <SubjectBlock 
+          subjectName={subject}
+          key={index}
+          subjectID={index}
+        />
+      )
+    })
+  }
 }
 
 const mapStateToProps = (state) => {

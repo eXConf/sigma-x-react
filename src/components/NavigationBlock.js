@@ -5,6 +5,39 @@ import { copyToClipboard } from './helpers'
 
 class NavigationBlock extends React.Component {
 
+  render() {
+    return (
+      <tr>
+        <td colSpan={this.props.numberOfPlayers + 1}>
+          <div className="navigation-block">
+            <button 
+              onClick={() => this.onPrevClicked()} 
+              className="nav-btn nav-prev"
+            ><i className="fas fa-chevron-left"></i></button>
+            <button 
+            className="nav-btn nav-current"
+            onClick={() => {
+              const text = this.getCurrentText()
+              if (window.electron) {
+                // Electron-specific code
+                window.electron.bridge.sendToChat(text)
+              } else {
+                copyToClipboard(text)
+              }
+            }}
+            >
+              {this.getCurrentNav()}
+            </button>
+            <button 
+              onClick={() => this.onNextClicked()} 
+              className="nav-btn nav-next"
+            ><i className="fas fa-chevron-right"></i></button>
+          </div>
+        </td>
+      </tr>
+    )
+  }
+
   scrollToCurrentQuestion = () => {
     const activeQuestion = 
       document.querySelector(`.q${this.props.currentQuestionNum}`)
@@ -49,39 +82,6 @@ class NavigationBlock extends React.Component {
     let currentPrice = ((currentQuestionNum % numberOfQuestions) + 1) * priceMultiplier
 
     return `Тема #${currentSubjectNum + 1}: ${currentSubjectName}, вопрос за ${currentPrice}`
-  }
-
-  render() {
-    return (
-      <tr>
-        <td colSpan={this.props.numberOfPlayers + 1}>
-          <div className="navigation-block">
-            <button 
-              onClick={() => this.onPrevClicked()} 
-              className="nav-btn nav-prev"
-            ><i className="fas fa-chevron-left"></i></button>
-            <button 
-            className="nav-btn nav-current"
-            onClick={() => {
-              const text = this.getCurrentText()
-              if (window.electron) {
-                // Electron-specific code
-                window.electron.bridge.sendToChat(text)
-              } else {
-                copyToClipboard(text)
-              }
-            }}
-            >
-              {this.getCurrentNav()}
-            </button>
-            <button 
-              onClick={() => this.onNextClicked()} 
-              className="nav-btn nav-next"
-            ><i className="fas fa-chevron-right"></i></button>
-          </div>
-        </td>
-      </tr>
-    )
   }
 }
 
