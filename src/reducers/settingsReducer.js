@@ -1,4 +1,3 @@
-import { setUserColor } from '../actions'
 import { 
   SET_PLAYERS_NUMBER,
   SET_QUESTIONS_NUMBER,
