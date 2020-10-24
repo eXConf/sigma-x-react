@@ -13,14 +13,14 @@ class Themes extends React.Component {
         <div className="themes">
           {this.renderThemes()}
           <div className="user-theme-text">
-            Ниже вы можете задать цвета пользовательской темы (кликните по цвету, который хотите поменять, затем выберите новый в палитре):
+            Ниже вы можете задать цвета пользовательской темы (кликните по цвету, который хотите поменять, затем выберите новый в палитре ниже):
           </div>
           <div className="user-colors">
             {this.renderUserThemeControl()}
           </div>
-          <div>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
               {this.renderColorPicker()}
-            </div>
+          </div>
         </div>
       </div>
     )
