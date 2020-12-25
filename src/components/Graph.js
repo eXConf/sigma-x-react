@@ -3,6 +3,62 @@ import { connect } from 'react-redux'
 import {Line } from 'react-chartjs-2'
 
 class Graph extends React.Component {
+  // Prepare answers data (plusses and minuses)
+  copyAnswersData = () => {
+    const {players} = this.props
+    let csv = ''
+    
+    players.map(player => {
+      csv += player.name + '\t'
+      const {answers} = player
+      const length = answers.length
+
+      for (let i = 0; i < length; i++) {
+        const text = !answers[i] ? ' ' : answers[i] > 0 ? 1 : -1
+        csv += (text + '\t')
+      }
+      csv += '\n'
+    })
+    this.copyTextToClipboard(csv)
+  }
+
+  // copied from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
+fallbackCopyTextToClipboard = (text) => {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    // console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+
+  document.body.removeChild(textArea);
+}
+
+copyTextToClipboard = (text) => {
+  if (!navigator.clipboard) {
+    this.fallbackCopyTextToClipboard(text);
+    return;
+  }
+  navigator.clipboard.writeText(text).then(function() {
+    // console.log('Async: Copying to clipboard was successful!');
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+}
+  
   render() {
     this.getDatasets()
     return(
@@ -20,6 +76,11 @@ class Graph extends React.Component {
               options={this.graphOptions}
               plugins={this.graphPlugins}
             />
+        </div>
+        <div className="copyAnswers" style={{marginTop: '1em'}}>
+          <button
+            onClick={this.copyAnswersData}
+          >Копировать расплюсовку для таблицы</button>
         </div>
       </div>
     )
