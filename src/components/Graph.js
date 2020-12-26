@@ -3,13 +3,27 @@ import { connect } from 'react-redux'
 import {Line } from 'react-chartjs-2'
 
 class Graph extends React.Component {
+  state = {
+    withNames: true
+  }
+
+  toggleWithNames = () => {
+    this.setState(prev => {
+      return {...prev, withNames: !prev.withNames}
+    })
+  }
+  
   // Prepare answers data (plusses and minuses)
   copyAnswersData = () => {
     const {players} = this.props
     let csv = ''
     
     players.map(player => {
-      csv += player.name + '\t'
+      
+      if (this.state.withNames) {
+        csv += player.name + '\t'
+      }
+
       const {answers} = player
       const length = answers.length
 
@@ -39,7 +53,7 @@ fallbackCopyTextToClipboard = (text) => {
   try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
-    // console.log('Fallback: Copying text command was ' + msg);
+    console.log('Fallback: Copying text command was ' + msg);
   } catch (err) {
     console.error('Fallback: Oops, unable to copy', err);
   }
@@ -78,9 +92,19 @@ copyTextToClipboard = (text) => {
             />
         </div>
         <div className="copyAnswers" style={{marginTop: '1em'}}>
+          <h2>Расплюсовка для таблицы</h2>
+          <div style={{marginBottom: '1em'}}>
+            <input 
+              type="checkbox" 
+              checked={this.state.withNames} 
+              onChange={this.toggleWithNames} 
+              style={{marginRight: '0.5em'}}
+            />
+            <label style={{fontSize: '1.2em'}}>Добавить имена игроков</label>
+          </div>
           <button
             onClick={this.copyAnswersData}
-          >Копировать расплюсовку для таблицы</button>
+          >Копировать расплюсовку</button>
         </div>
       </div>
     )
